@@ -1,6 +1,7 @@
 package com.gestionDigital.GD.implementation;
 
 import com.gestionDigital.GD.interfaces.NewsService;
+import com.gestionDigital.GD.model.Image;
 import com.gestionDigital.GD.model.News;
 import com.gestionDigital.GD.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -19,8 +20,13 @@ public class NewsImp implements NewsService {
     }
 
     @Override
+    public List<News> findAllPosted() {
+        return this.newsRepository.showAllPosted();
+    }
+
+    @Override
     public List<News> findAll() {
-        return (List<News>) this.newsRepository.findAll();
+        return (List<News>) this.newsRepository.showAll();
     }
 
     @Override
@@ -29,12 +35,35 @@ public class NewsImp implements NewsService {
     }
 
     @Override
-    public List<News> newNews(News news){
+    public News newNews(News news){
         News n = new News();
+        n.setLocation(news.getLocation());
         n.setTitle(news.getTitle());
         n.setIntroduction(news.getIntroduction());
         n.setNews(news.getNews());
+        n.setCategory(news.getCategory());
+        n.setPosted(news.getPosted());
+
         this.newsRepository.save(n);
-        return (List<News>) this.newsRepository.findAll();
+        return this.newsRepository.findLast();
     }
+
+    @Override
+    public List<Image> Pics(Long id) {
+        return this.newsRepository.Pics(id);
+    }
+
+    @Override
+    public void deleteNews(Long id) {
+        this.newsRepository.deleteById(id);
+    }
+
+    @Override
+    public void postNews(Long id, News news) {
+        News n = this.newsRepository.findOne(id);
+        n.setPosted(news.getPosted());
+        this.newsRepository.save(n);
+
+    }
+
 }
