@@ -21,8 +21,10 @@ public class tests {
     }
 
 
+
+
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/noticias/todos")
+    @GetMapping(value = "/todas")
     public String AllNews() {
         return "News";
     }
@@ -37,7 +39,13 @@ public class tests {
 
     @GetMapping(value = "/noticias/{id}")
     public String SingleNews(@PathVariable("id") Long id) {
-        return "SingleNews";
+        return "Noticia";
+    }
+
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value = "/noticias/modificar/{id}")
+    public String UpdateNews(@PathVariable("id") Long id) {
+        return "Noticia";
     }
 
 

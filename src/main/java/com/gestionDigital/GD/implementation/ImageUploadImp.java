@@ -9,8 +9,6 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
-import java.util.List;
-
 @Service
 public class ImageUploadImp implements ImageUploadService {
 
@@ -46,13 +44,13 @@ public class ImageUploadImp implements ImageUploadService {
         return bytes;
     }
 
-
-
-    /*@Override
-    public void saveImage(MultipartFile imageFile) throws Exception {
-        String folder = "C:/GD/uploads/";
-        byte[] bytes = imageFile.getBytes();
-        Path path = Paths.get(folder + imageFile.getOriginalFilename());
-        Files.write(path,bytes);
-    }*/
+    @Override
+    public News deletePic(Long id, Long x) {
+        News n = this.newsRepository.findOne(id);
+        Image i = this.imageRepository.findOne(x);
+        n.getImagesList().remove(i);
+        this.newsRepository.save(n);
+        this.imageRepository.delete(i);
+        return n;
+    }
 }

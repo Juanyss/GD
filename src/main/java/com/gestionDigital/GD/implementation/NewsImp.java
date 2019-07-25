@@ -34,17 +34,11 @@ public class NewsImp implements NewsService {
         return this.newsRepository.findOne(idNews);
     }
 
+
     @Override
     public News newNews(News news){
         News n = new News();
-        n.setLocation(news.getLocation());
-        n.setTitle(news.getTitle());
-        n.setIntroduction(news.getIntroduction());
-        n.setNews(news.getNews());
-        n.setCategory(news.getCategory());
-        n.setPosted(news.getPosted());
-
-        this.newsRepository.save(n);
+        saveNews(n,news);
         return this.newsRepository.findLast();
     }
 
@@ -59,11 +53,30 @@ public class NewsImp implements NewsService {
     }
 
     @Override
-    public void postNews(Long id, News news) {
+    public News postNews(Long id, News news) {
         News n = this.newsRepository.findOne(id);
         n.setPosted(news.getPosted());
         this.newsRepository.save(n);
-
+        return this.newsRepository.findOne(id);
     }
+
+    @Override
+    public News updateNews(Long id, News news) {
+        News n = this.newsRepository.findOne(id);
+        saveNews(n,news);
+        return this.newsRepository.findOne(id);
+    }
+
+    public void saveNews(News n, News news){
+        n.setLocation(news.getLocation());
+        n.setTitle(news.getTitle());
+        n.setIntroduction(news.getIntroduction());
+        n.setNews(news.getNews());
+        n.setCategory(news.getCategory());
+        n.setPosted(news.getPosted());
+        n.setLevel(news.getLevel());
+        this.newsRepository.save(n);
+    }
+
 
 }

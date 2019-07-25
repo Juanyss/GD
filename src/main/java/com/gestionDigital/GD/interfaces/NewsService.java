@@ -19,5 +19,7 @@ public interface NewsService {
 
     void deleteNews(Long id);
 
-    void postNews(Long id, News news);
+    News postNews(Long id, News news);
+
+    News updateNews(Long id, News news);
 }

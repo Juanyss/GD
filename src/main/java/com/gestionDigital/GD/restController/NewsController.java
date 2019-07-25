@@ -41,14 +41,19 @@ public class NewsController {
     }
 
     @PostMapping("/{id}")
-    public void PostNews(@PathVariable("id") Long id, @RequestBody News news) {
-        this.newsImp.postNews(id,news);
+    public News PostNews(@PathVariable("id") Long id, @RequestBody News news) {
+        return this.newsImp.postNews(id,news);
     }
 
     @DeleteMapping("/{id}")
     public List<News> deleteNews(@PathVariable("id") Long id) {
         this.newsImp.deleteNews(id);
         return this.newsImp.findAll();
+    }
+
+    @PutMapping("/{id}")
+    public News updateNews(@PathVariable("id") Long id, @RequestBody News news) {
+        return this.newsImp.updateNews(id,news);
     }
 
 }

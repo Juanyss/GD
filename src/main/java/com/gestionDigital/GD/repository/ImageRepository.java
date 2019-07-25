@@ -10,6 +10,8 @@ import java.util.List;
 
 @Repository
 public interface ImageRepository extends CrudRepository<Image, Long> {
+    @Query("select i from Image i where i.idImage = :id")
+    Image findOne(@Param("id") Long id );
 
     @Query("select i.bytes from Image i where i.idImage = :id")
     byte[] getVideo(@Param("id") Long id);

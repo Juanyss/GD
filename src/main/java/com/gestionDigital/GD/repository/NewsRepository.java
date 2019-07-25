@@ -26,4 +26,5 @@ public interface NewsRepository extends CrudRepository<News, Long> {
      @Query("select n.imagesList from News n where n.idNews = :id")
      List<Image> Pics(@Param("id") Long id);
 
+
 }

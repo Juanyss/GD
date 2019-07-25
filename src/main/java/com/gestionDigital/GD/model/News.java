@@ -17,6 +17,7 @@ public class News {
     private String introduction;
     private String news;
     private String category;
+    private Level level;
     private String posted = "no";
 
     @OneToMany(targetEntity=Image.class, cascade = CascadeType.ALL)
@@ -27,12 +28,13 @@ public class News {
     public News() {
     }
 
-    public News(String location, String title, String introduction, String news, String category) {
+    public News(String location, String title, String introduction, String news, String category, Level level) {
         this.location = location;
         this.title = title;
         this.introduction = introduction;
         this.news = news;
         this.category = category;
+        this.level = level;
         this.imagesList = new ArrayList<>();
     }
 
@@ -84,6 +86,8 @@ public class News {
         this.category = category;
     }
 
+
+
     public List<Image> getImagesList() {
         return imagesList;
     }
@@ -108,6 +112,20 @@ public class News {
         this.posted = posted;
     }
 
+
+    //Enum for News importance level
+    public enum Level{
+        NORMAL, IMPORTANTE;
+    }
+
+    public Level getLevel() {
+        return level;
+    }
+
+    public void setLevel(Level level) {
+        this.level = level;
+    }
+
     @Override
     public String toString() {
         return "News{" +
@@ -117,6 +135,7 @@ public class News {
                 ", introduction='" + introduction + '\'' +
                 ", news='" + news + '\'' +
                 ", category='" + category + '\'' +
+                ", level='" + level + '\'' +
                 ", posted='" + posted + '\'' +
                 ", imagesList=" + imagesList +
                 ", date='" + date + '\'' +

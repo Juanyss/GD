@@ -12,9 +12,10 @@ $.ajax({
             "<label>" + result.news + " </label><br>" +
             "<label>" + result.date + " </label><br>" +
             "<label>" + result.category + " </label><br>" +
+            "<label>" + result.level + " </label><br>" +
             "<br>"
         );
-        showPics(result.idNews);
+        showPicsWithButton(result.idNews);
         $("#actionsPics").append(
             "<br>" +
             "<form id='picForm' action='/api/uploadimage/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
@@ -44,27 +45,52 @@ $("#picForm").submit(function(e) {
     });
 })
 
-function showPics(id){
+function showPicsWithButton(id) {
     $.ajax({
         url: "/api/news/pics/" + id,
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
             $("#newsPics").empty();
-            for(x=0;x<result.length;x++){
-                if(result[x].type == "image"){
-                    $("#actionsPics").append(
-                        "<image width='320' height='240' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+            for (x = 0; x < result.length; x++) {
+                if (result[x].type == "image") {
+                    $("#newsPics").append(
+                        "<image width='320' height='240' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
+                        "<button id='summitButton' onclick='removePic("+ id + ","+ result[x].idImage +")'>Quitar foto</button>"
                     )
-                }else if(result[x].type == "video"){
-                    $("#actionsPics").append(
+                } else if (result[x].type == "video") {
+                    $("#newsPics").append(
                         "<video width='320' height='240' controls>" +
                         "<source src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
-                        "</video>"
+                        "</video>" +
+                        "<button id='summitButton' onclick='removePic("+ id + ","+ result[x].idImage +")'>Quitar foto</button>"
                     )
                 }
 
             }
+        }
+    })
+}
+
+function removePic(id,x){
+    $.ajax({
+        url: "/api/uploadimage/" + id + "/" + x,
+        contentType: "application/json; charset=utf-8",
+        method: "GET",
+        success: function (result) {
+            $("#test").empty();
+            $("#test").append(
+                "<input id='newsLocation' value='" + result.location + " '><br>" +
+                "<input id='newsTittle' value='" + result.title + "'><br>" +
+                "<input id='newsIntro' value='" + result.introduction + "'><br>" +
+                "<input id='newsNews' value='" + result.news + "'><br>" +
+                "<input id='newsCategory' value='" + result.category + "'><br>" +
+                "<input id='newsLevel' value='" + result.level + "'><br>" +
+                "<br><div id='newsPics'></div>" +
+                "<button id='summitButton' onclick='updateNews("+ result.idNews +")'>Modificar Noticia</button>" +
+                "<br>"
+            );
+            showPicsWithButton(result.idNews);
         }
     })
 }

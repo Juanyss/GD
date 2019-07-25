@@ -6,7 +6,8 @@ $("#summitButton").click(function () {
             "title": $("#newsTittle").val(),
             "introduction":$("#newsIntro").val(),
             "news": $("#newsNews").val(),
-            "category":$("#newsCategory").val()}),
+            "category":$("#newsCategory").val(),
+            "level":$("#newsLevel").val()}),
         contentType: "application/json; charset=utf-8",
         method: "POST",
         success: function (result) {
