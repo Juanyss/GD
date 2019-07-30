@@ -66,27 +66,17 @@ $( document ).ready()
     }
 
     function showPics(id) {
-        $.ajax({
+        /*$.ajax({
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
             success: function (result) {
-                $("#newsPics").empty();
-                $("#newsPicsThumbnail").empty();
+                $("#Slider").empty();
                 for (x = 0; x < result.length; x++) {
                     if (result[x].type == "image") {
-                        $("#newsPics").append(
-                            "<div class='sp-slide'>"+
-                            "<img class='sp-image' src='/api/uploadimage/videoTest/" + result[x].idImage + "'" +
-                            "data-src='/api/uploadimage/videoTest/" + result[x].idImage + "'" +
-                            "</div>"
+                        $("#Slider").append(
+                            "<img src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
                         );
-                        $("#newsPicsThumbnail").append(
-                            "<div class='sp-thumbnail'>" +
-                            "<div  class='sp-thumbnail-image-container'>" +
-                            "<img class='sp-thumbnail-image' src='/api/uploadimage/videoTest/" + result[x].idImage + "'><br>"
-
-                        )
                     } else if (result[x].type == "video") {
                         $("#newsPics").append(
                             "<video width='320' height='240' controls>" +
@@ -94,11 +84,44 @@ $( document ).ready()
                             "</video>"
                         )
                     }
-
+                }
+            }
+        })*/
+        $.ajax({
+            url: "/api/news/pics/" + id,
+            contentType: "application/json; charset=utf-8",
+            method: "GET",
+            success: function (result) {
+                $("#Slider").empty();
+                if (result[0].type == "image") {
+                    $("#Slider").append(
+                        "<img src='/api/uploadimage/videoTest/" + result[0].idImage + "'>"
+                    );
+                } else if (result[0].type == "video") {
+                    $("#newsPics").append(
+                        "<video width='320' height='240' controls>" +
+                        "<source src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
+                        "</video>"
+                    )
                 }
             }
         })
+
     }
+    //----------------------------------------------------------
+    //For slider
+    $("#Next").click(function(){
+        $("#Slider").append($("#Slider img:first-of-type"));
+    });
+
+    $("#Prev").click(function(){
+        $("#Slider").prepend($("#Slider img:last-of-type"));
+    });
+
+
+
+
+    //--------------------------------------------------------
 
     function showPicsWithButton(id) {
         $.ajax({

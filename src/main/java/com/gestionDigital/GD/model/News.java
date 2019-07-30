@@ -23,7 +23,8 @@ public class News {
     @OneToMany(targetEntity=Image.class, cascade = CascadeType.ALL)
     private List<Image> imagesList;
 
-    private String date = new SimpleDateFormat("dd/MM/yyyy").format(new Date());
+    private String date;
+
 
     public News() {
     }

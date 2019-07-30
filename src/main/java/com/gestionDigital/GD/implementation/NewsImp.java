@@ -4,10 +4,13 @@ import com.gestionDigital.GD.interfaces.NewsService;
 import com.gestionDigital.GD.model.Image;
 import com.gestionDigital.GD.model.News;
 import com.gestionDigital.GD.repository.NewsRepository;
+import com.sun.xml.internal.ws.spi.db.DatabindingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 
+import java.text.SimpleDateFormat;
+import java.util.Date;
 import java.util.List;
 
 @Service
@@ -56,6 +59,7 @@ public class NewsImp implements NewsService {
     public News postNews(Long id, News news) {
         News n = this.newsRepository.findOne(id);
         n.setPosted(news.getPosted());
+        n.setDate(new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
         this.newsRepository.save(n);
         return this.newsRepository.findOne(id);
     }
