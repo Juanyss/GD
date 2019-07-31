@@ -45,7 +45,7 @@ public class tests {
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/noticias/modificar/{id}")
     public String UpdateNews(@PathVariable("id") Long id) {
-        return "Noticia";
+        return "SingleNews";
     }
 
 

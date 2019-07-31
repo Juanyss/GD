@@ -66,7 +66,7 @@ $( document ).ready()
     }
 
     function showPics(id) {
-        /*$.ajax({
+        $.ajax({
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
@@ -86,8 +86,8 @@ $( document ).ready()
                     }
                 }
             }
-        })*/
-        $.ajax({
+        })
+        /*$.ajax({
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
@@ -105,7 +105,7 @@ $( document ).ready()
                     )
                 }
             }
-        })
+        })*/
 
     }
     //----------------------------------------------------------
