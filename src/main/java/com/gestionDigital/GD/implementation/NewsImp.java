@@ -4,7 +4,6 @@ import com.gestionDigital.GD.interfaces.NewsService;
 import com.gestionDigital.GD.model.Image;
 import com.gestionDigital.GD.model.News;
 import com.gestionDigital.GD.repository.NewsRepository;
-import com.sun.xml.internal.ws.spi.db.DatabindingException;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -82,5 +81,8 @@ public class NewsImp implements NewsService {
         this.newsRepository.save(n);
     }
 
-
+    @Override
+    public List<News> otherNews(Long id) {
+        return this.newsRepository.otherNews(id);
+    }
 }

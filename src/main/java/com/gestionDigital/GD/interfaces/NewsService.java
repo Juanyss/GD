@@ -22,4 +22,6 @@ public interface NewsService {
     News postNews(Long id, News news);
 
     News updateNews(Long id, News news);
+
+    List<News> otherNews(Long id);
 }

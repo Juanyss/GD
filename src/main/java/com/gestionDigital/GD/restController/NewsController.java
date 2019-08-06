@@ -56,4 +56,9 @@ public class NewsController {
         return this.newsImp.updateNews(id,news);
     }
 
+    @GetMapping("otherNews/{id}")
+    public List<News> otherNews(@PathVariable("id") Long id) {
+        return this.newsImp.otherNews(id);
+    }
+
 }

@@ -1,8 +1,7 @@
 $( document ).ready()
 {
-    var url = "www.gestiondigital1.net"+location.pathname;
+    var url = "http://192.168.0.136:8080"+location.pathname;
     var id = localStorage.getItem("idNews");
-    if(location.pathname=="/noticias/"+id){
     $.ajax({
         url: "/api/news/" + id,
         contentType: "application/json; charset=utf-8",
@@ -28,42 +27,79 @@ $( document ).ready()
             $("#newsLocation").append(
                 result.location
             );
+            $("#shareWhatsapp").empty();
+            $("#shareWhatsapp").append(
+            "<a href='https://api.whatsapp.com/send?text="+ url +"' title='Comparte esta noticia'><div class='social_icon' id='whatsapp'></div></a>"
+            );
             showPics(result.idNews);
         }
     })
-    }else if(location.pathname=="/noticias/modificar/"+id){
+
+    //Other news
+    $.ajax({
+        url: "/api/news/otherNews/" + id,
+        contentType: "application/json; charset=utf-8",
+        method: "GET",
+        success: function (result) {
+            $("#otherNews").empty();
+            for(x=0;x<2;x++){
+                $("#otherNews").append(
+                    "<a onclick='goTo("+result[x].idNews+")'>" +
+                    "<div class='news_wrap' >" +
+                    "<div class='card_news' id='previewPics"+result[x].idNews+"'>" +
+                    "</div>" +
+                    "</div></a>"
+                )
+                previewPic(result[x].idNews,result[x].category,result[x].title,result[x].date);
+            }
+        }
+    })
+
+    function goTo(id){
+        localStorage.setItem("idNews", id);
+        window.location.href="/noticias/"+id;
+    }
+
+    function previewPic(id,categoria,titulo, fecha){
         $.ajax({
-            url: "/api/news/" + id,
+            url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
             success: function (result) {
-                $("#test").append(
-                    "<input id='newsLocation' value='" + result.location + " '><br>" +
-                    "<input id='newsTittle' value='" + result.title + "'><br>" +
-                    "<input id='newsIntro' value='" + result.introduction + "'><br>" +
-                    "<input id='newsNews' value='" + result.news + "'><br>" +
-                    "<input id='newsCategory' value='" + result.category + "'><br>" +
-                    "<select id='newsLevel' placeholder='Importancia'>" +
-                    "<option value='NORMAL'>Normal</option>"+
-                    "<option value='IMPORTANTE'>Importante</option>"+
-                    "</select><br>"+
-                    "<label>Esta noticia " + result.posted + " se encuentra publicada - Cambiar?</label>" +
-                    "<select id='newsPosted' placeholder='Importancia'>" +
-                    "<option value='no'>NO</option>"+
-                    "<option value='si'>SI</option>"+
-                    "</select><button onclick='postNews(" + result.idNews + ")'>Cambiar</button><br>"+
-                    "<br><div id='newsPics'></div><br>" +
-                    "<form id='picForm' action='/api/uploadimage/updatepic/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
-                    "<input type='file' id='imageFile' name='imageFile'>" +
-                    "<input type='submit' id='summitPic' value='Subir foto'>" +
-                    "</form><br><br>" +
-                   "<button id='summitButton' onclick='updateNews("+ result.idNews +")'>Modificar Noticia</button>" +
-                    "<br>"
-                );
-                showPicsWithButton(result.idNews);
+                $("#previewPics"+id).empty();
+                $("#previewPics"+id).append(
+                    "<img class='img_news' src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
+                    "<div class='text_span'>" +
+                    "<span>"+categoria+"</span><span>"+fecha+"</span>" +
+                    "</div>" +
+                    "</img>" +
+                    "<div class='text_news'>" +
+                    "<h1>"+titulo+"</h1>" +
+                    "</div>"
+                )
             }
         })
     }
+
+    //Weather info
+    $.ajax({
+        url: "https://ws.smn.gob.ar/map_items/weather",
+        contentType: "application/json; charset=utf-8",
+        method: "GET",
+        success: function (result) {
+            $("#weatherInfo").empty();
+            for(x=0;x<result.length;x++){
+                if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
+                    $("#weatherInfo").append(
+                        "<span>"+ result[x].name +", " + result[x].province + "</span><br>" +
+                        "<span>La temperatura es de "+ result[x].weather.temp +"°C</span><br>" +
+                        "<span>"+ result[x].weather.description +"</span>"
+                    )
+                }
+            }
+        }
+    })
+
 
     function showPics(id) {
         $.ajax({

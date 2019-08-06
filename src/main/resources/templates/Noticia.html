@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Noticia</title>
     <script	src="/JS/jquery-3.3.1.min.js"></script>
+    <script src="/JS/SingleNews.js"></script>
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <link rel="stylesheet" href="/CSS/SingleNews.css">
     <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">
@@ -16,7 +17,7 @@
         <nav class="navbar col-xs-12 col-sm-12 col-md-12 col-lg-12">
             <div class="navbar_container container-fluid">
             <a class="navbar-brand text-center" href="home.html">GESTIÓN DIGITAL</a>
-            <div class="weather"></div>
+            <div class="weather" id="weatherInfo"></div>
             </div>
         </nav>
 </header>
@@ -39,12 +40,12 @@
                 </div>
                 <div class="tittle_news col-lg-9">
                     <div id="newsCategory" class="kicker col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                       <span>aaaa</span> <span>20/07/20019</span>
+
                     </div>
                     <div class="tittle_text col-xs-12 col-sm-12 col-md-12 col-lg-12">
-                        <h6 id="newsLocation">Lugar</h6>
-                        <h1 id="newsTitle">Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</h1>
-                    <h5 id="newsIntroduction">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum.</h5>
+                        <h6 id="newsLocation"></h6>
+                        <h1 id="newsTitle"></h1>
+                    <h5 id="newsIntroduction"></h5>
                 </div>
                 </div>
                 <div class="empty col-lg-1 col-xs-12">
@@ -56,9 +57,6 @@
 
     <div id="Slideshow" class="slider">
         <div id="Slider">
-            <img src="https://wallpaperscraft.com/image/planet_light_spots_space_86643_1920x1080.jpg"/>
-            <img src="http://www.highreshdwallpapers.com/wp-content/uploads/2014/01/Outer-Space-HD-Wallpaper-Pack-5.jpg"/>
-            <img src="https://images4.alphacoders.com/106/thumb-1920-106826.jpg"/>
         </div>
         <div id="Arrows">
             <i id="Prev" class="fa fa-chevron-left fa-2x" aria-hidden="true"></i>
@@ -73,81 +71,34 @@
                 <a href="#" title="Comparte esta noticia"><div class="social_icon" id="facebook"></div></a>
                 <a href="#" title="Comparte esta noticia"><div class="social_icon" id="twitter"></div></a>
                 <a href="#" title="Comparte esta noticia"><div class="social_icon" id="gmail"></div></a>
-                <a href="#" title="Comparte esta noticia"><div class="social_icon" id="whatsapp"></div></a>
+                <div id="shareWhatsapp"><a href="#" title="Comparte esta noticia"><div class="social_icon" id="whatsapp"></div></a></div>
             </div>
             </div>
             <div class="article  col-lg-7">
                 <div class="news_text first col-xs-8 col-sm-12 col-md-12 col-lg-12">
-                    <p id="newsNews">Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.
-                        Rhoncus mattis rhoncus urna neque viverra justo nec. Et malesuada fames ac turpis egestas sed.
-                        Aliquet lectus proin nibh nisl condimentum id venenatis. Sed euismod nisi porta lorem. Bibendum at varius vel pharetra.
-                        Vitae et leo duis ut diam quam nulla porttitor. Accumsan sit amet nulla facilisi morbi tempus iaculis urna id.
-                        Egestas purus viverra accumsan in. Massa sed elementum tempus egestas sed sed risus pretium.
-                        Tortor dignissim convallis aenean et. Tristique nulla aliquet enim tortor at auctor urna.
-                        In pellentesque massa placerat duis ultricies. Sit amet justo donec enim diam vulputate ut pharetra.</p>
+                    <p id="newsNews"></p>
                 </div>
             </div>
             <div class="videos col-xs-12 col-sm-12 col-md-12 col-lg-3">
                 <div class="more_news">
                 <h1>OTRAS NOTICIAS</h1>
                 </div>
-                <div class="news_wrap">
-                <div class="card_news">
-                    <div class="img_news">
-                        <div class="text_span">
-                            <span>POLITICA</span><span>20/07/2019</span>
+                <div id="otherNews">
+                    <div class="news_wrap" >
+                        <div class="card_news">
+                            <div class="img_news">
+                                <div class="text_span">
+                                    <span></span><span></span>
+                                </div>
+                            </div>
+                            <div class="text_news">
+                                <h1></h1>
+                                <h5></h5>
+                            </div>
                         </div>
                     </div>
-                    <div class="text_news">
-                        <h1>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt</h1>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</h5>
-                    </div>
                 </div>
-                <div class="card_news2">
-                    <div class="img_news2">
-                        <div class="text_span2">
-                            <span>POLITICA</span><span>20/07/2019</span>
-                        </div>
-                    </div>
-                    <div class="text_news2">
-                        <h1>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt</h1>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</h5>
-                    </div>
-                </div>
-                <div class="card_news3">
-                    <div class="img_news3">
-                        <div class="text_span3">
-                            <span>POLITICA</span><span>20/07/2019</span>
-                        </div>
-                    </div>
-                    <div class="text_news3">
-                        <h1>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt</h1>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</h5>
-                    </div>
-                </div>
-                <div class="card_news4">
-                    <div class="img_news4">
-                        <div class="text_span4">
-                            <span>POLITICA</span><span>20/07/2019</span>
-                        </div>
-                    </div>
-                    <div class="text_news4">
-                        <h1>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt</h1>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</h5>
-                    </div>
-                </div>
-                <div class="card_news4">
-                    <div class="img_news4">
-                        <div class="text_span4">
-                            <span>POLITICA</span><span>20/07/2019</span>
-                        </div>
-                    </div>
-                    <div class="text_news4">
-                        <h1>Lorem ipsum dolor sit amet sed do eiusmod tempor incididunt</h1>
-                        <h5>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna.</h5>
-                    </div>
-                </div>
-                </div>
+            </div>
             </div>
         </div>
     </div>

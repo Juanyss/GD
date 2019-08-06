@@ -1,10 +1,10 @@
 package com.gestionDigital.GD.model;
 
 import javax.persistence.*;
-import java.text.SimpleDateFormat;
+import javax.validation.constraints.NotEmpty;
 import java.util.ArrayList;
-import java.util.Date;
 import java.util.List;
+
 
 @Entity
 @Table(name = "News")
@@ -12,10 +12,25 @@ public class News {
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long idNews;
+
+    @NotEmpty
+    @Column(nullable = false)
     private String location;
+
+    @NotEmpty
+    @Column(nullable = false)
     private String title;
+
+    @NotEmpty
+    @Column(nullable = false)
     private String introduction;
+
+    @NotEmpty
+    @Column(length = 5000, nullable = false)
     private String news;
+
+    @NotEmpty
+    @Column(nullable = false)
     private String category;
     private Level level;
     private String posted = "no";
