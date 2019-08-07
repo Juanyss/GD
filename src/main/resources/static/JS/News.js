@@ -83,12 +83,10 @@ function deleteNews(id) {
 }
 
 function updateNews(id){
-    localStorage.setItem("idNews", id);
     window.location.href="/noticias/modificar/"+id;
 }
 
 function goTo(id){
-    localStorage.setItem("idNews", id);
     window.location.href="/noticias/"+id;
 }
 

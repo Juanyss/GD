@@ -1,9 +1,8 @@
 $( document ).ready()
 {
     var url = "http://192.168.0.136:8080"+location.pathname;
-    var id = localStorage.getItem("idNews");
     $.ajax({
-        url: "/api/news/" + id,
+        url: "/api/news/" + window.location.href.split('/')[4],
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
@@ -37,7 +36,7 @@ $( document ).ready()
 
     //Other news
     $.ajax({
-        url: "/api/news/otherNews/" + id,
+        url: "/api/news/otherNews/" + window.location.href.split('/')[4],
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
@@ -123,25 +122,7 @@ $( document ).ready()
                 }
             }
         })
-        /*$.ajax({
-            url: "/api/news/pics/" + id,
-            contentType: "application/json; charset=utf-8",
-            method: "GET",
-            success: function (result) {
-                $("#Slider").empty();
-                if (result[0].type == "image") {
-                    $("#Slider").append(
-                        "<img src='/api/uploadimage/videoTest/" + result[0].idImage + "'>"
-                    );
-                } else if (result[0].type == "video") {
-                    $("#newsPics").append(
-                        "<video width='320' height='240' controls>" +
-                        "<source src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
-                        "</video>"
-                    )
-                }
-            }
-        })*/
+
 
     }
     //----------------------------------------------------------
