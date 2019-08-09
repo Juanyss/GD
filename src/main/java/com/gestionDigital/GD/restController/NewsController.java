@@ -17,6 +17,12 @@ public class NewsController {
         this.newsImp = newsImp;
     }
 
+    @ApiOperation("Show important posted news")
+    @GetMapping("/important")
+    public List<News> showAllImportantPostedNews() {
+        return this.newsImp.findAllImportantPosted();
+    }
+
     @ApiOperation("Show posted news")
     @GetMapping("")
     public List<News> showAllPostedNews() {

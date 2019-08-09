@@ -11,8 +11,11 @@ import java.util.List;
 
 @Repository
 public interface NewsRepository extends CrudRepository<News, Long> {
-     @Query("select n from News n where n.posted = 'si' order by n.idNews desc")
+     @Query("select n from News n where n.posted = 'si' AND n.level = 0 order by n.idNews desc")
      List<News> showAllPosted();
+
+     @Query("select n from News n where n.posted = 'si' and n.level = 1 order by n.idNews desc")
+     List<News> showAllImportantPosted();
 
      @Query("select n from News n order by n.idNews desc")
      List<News> showAll();
@@ -28,4 +31,6 @@ public interface NewsRepository extends CrudRepository<News, Long> {
 
      @Query("select n from News n where n.posted = 'si' and n.idNews <> :id order by n.idNews desc")
      List<News> otherNews(@Param("id") Long id);
+
+
 }

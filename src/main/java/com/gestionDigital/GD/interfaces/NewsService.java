@@ -24,4 +24,6 @@ public interface NewsService {
     News updateNews(Long id, News news);
 
     List<News> otherNews(Long id);
+
+    List<News> findAllImportantPosted();
 }
