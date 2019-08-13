@@ -90,9 +90,8 @@ $( document ).ready()
             for(x=0;x<result.length;x++){
                 if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
                     $("#weatherInfo").append(
-                        "<span>"+ result[x].name +", " + result[x].province + "</span><br>" +
-                        "<span>La temperatura es de "+ result[x].weather.temp +"°C</span><br>" +
-                        "<span>"+ result[x].weather.description +"</span>"
+                        "<br><span>Temperatura: "+ result[x].weather.temp +"°C</span><br>"
+                        //"<span>"+ result[x].weather.description +"</span>"
                     )
                 }
             }

@@ -10,7 +10,7 @@ public class tests {
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/")
     public String home() {
-        return "home";
+        return "NewNews";
     }
 
 

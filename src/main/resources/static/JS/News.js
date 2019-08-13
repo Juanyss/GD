@@ -16,7 +16,7 @@ if(url.match("noticias")){ // Bring the news with status posted
                     "<label>" + result[x].level + " </label><br>" +
                     "<br><div id='newsPics" + result[x].idNews + "'>" +
                     "<br>" +
-                    "<button onclick='goTo("+result[x].idNews+")'>Ir a la noticia</button><br>"
+                    "<a href='/noticias/"+result[x].idNews+"'><button>Ir a la noticia</button></a><br>"
                 )
                 previewPic(result[x].idNews);
             }
@@ -41,7 +41,7 @@ if(url.match("noticias")){ // Bring the news with status posted
                     "<div id='newsPics" + result[x].idNews + "'>" +
                     "<br>" +
                     "<br>" +
-                    "<button onclick='goTo("+result[x].idNews+")'>Ir a la noticia</button><br>" +
+                    "<a href='/noticias/"+result[x].idNews+"'><button>Ir a la noticia</button></a><br>" +
                     "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button><br>" +
                     "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button><br>"
                 )
@@ -71,7 +71,7 @@ function deleteNews(id) {
                     "<label>" + result[x].level + " </label><br>" +
                     "<br><div id='newsPics" + result[x].idNews + "'>" +
                     "<br>" +
-                    "<button onclick='goTo("+result[x].idNews+")'>Ir a la noticia</button><br>" +
+                    "<a href='/noticias/"+result[x].idNews+"'><button>Ir a la noticia</button></a><br>" +
                     "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button><br>" +
                     "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button><br>"
                 );

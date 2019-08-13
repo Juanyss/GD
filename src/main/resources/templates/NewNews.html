@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Crear noticia</title>
+    <link rel="stylesheet" type="text/css" href="CSS/NewsForm.css"/>
+    <script	src="JS/jquery-3.3.1.min.js"></script>
+</head>
+<body>
+
+<div id="NewsForm"></div>
+<h2>Nueva Noticia</h2><br>
+<input placeholder='Lugar' id='newsLocation' type='text' required /><br>
+<div class='line'></div><br>
+<input placeholder='Titulo' type='text' id='newsTittle' required /><br>
+<div class='line'></div><br>
+<input placeholder='Bajada' type='text' id='newsIntro'  /><br>
+<div class='line'></div><br>
+<textarea class="textArea" placeholder="Noticia"  type='text' rows="4" cols="50" id='newsNews'></textarea><br>
+<div class='line'></div><br>
+<input placeholder='Categoria' type='text' id='newsCategory' required /><br>
+<div class='line'></div><br>
+<h3>Importancia de la notica
+<select id="newsLevel" placeholder="Importancia">
+    <option value="NORMAL">Normal</option>
+    <option value="IMPORTANTE">Importante</option>
+</select></h3><br><br><br>
+<button class='formBtn' id="summitButton">Crear</button>
+
+<script src="JS/test.js"></script>
+</body>
+</html>
