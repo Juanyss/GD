@@ -6,7 +6,7 @@ import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 
 @Controller
-public class tests {
+public class NewsWebController {
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/")
     public String home() {
@@ -20,7 +20,11 @@ public class tests {
         return "uploadPics";
     }
 
-
+    @PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value = "/updatepics/{id}")
+    public String updatePics(@PathVariable("id") Long id) {
+        return "updatePics";
+    }
 
 
     @PreAuthorize("hasAnyRole('ADMIN')")
@@ -36,17 +40,16 @@ public class tests {
     }
 
 
-
     @GetMapping(value = "/noticias/{id}")
     public String SingleNews(@PathVariable("id") Long id) {
         return "Noticia";
     }
 
+
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/noticias/modificar/{id}")
     public String UpdateNews(@PathVariable("id") Long id) {
-        return "SingleNews";
+        return "UpdateNews";
     }
-
 
 }

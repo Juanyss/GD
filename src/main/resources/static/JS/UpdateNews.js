@@ -1,32 +1,51 @@
 $( document ).ready()
 {
     $.ajax({
-        url: "/api/news/" + window.location.href.split('/')[4],
+        url: "/api/news/" + window.location.href.split('/')[5],
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
-            $("#newInfo").empty();
-            $("#newInfo").append(
-                "<h2>Subir fotos</h2><br>" +
-                "<p><b>Lugar: </b>" + result.location + " <br>" +
-                "<b>Titulo: </b>" + result.title + " <br>" +
-                "<b>Bajada: </b>" + result.introduction + " <br>" +
-                "<b>Noticia: </b>" + result.news + " <br>" +
-                "<b>Categoria: </b>" + result.category + " <br>" +
-                "<b>Importancia: </b>" + result.level + " <br>" +
-                "Esta noticia <b>" + result.posted.toUpperCase() + "</b> se encuentra publicada</p><br><br>" +
+            $("#newsInfo").empty();
+            $("#newsInfo").append(
+                "<h2>Actualizar noticia</h2><br>" +
+                "<p><b>Lugar: </b><input id='newsLocation' type='text' value='" + result.location + " '></p><br>" +
+                "<p><b>Titulo: </b><input id='newsTittle' type='text' value='" + result.title + " '></p><br>" +
+                "<p><b>Bajada: </b><textarea id='newsIntro'  type='text' rows='4' cols='50' >" + result.introduction + "</textarea><br></p><br>" +
+                "<p><b>Noticia: </b><textarea id='newsNews' type='text' rows='10' cols='50' >" + result.news + "</textarea></p><br><br>" +
+                "<p><b>Categoria: </b><input id='newsCategory' type='text' value='" + result.category + " '></p><br>" +
+                "<p><b>Importancia: </b><select id='newsLevel'>" +
+                "</select></p><br>" +
+                "<p>Esta noticia <b>" + result.posted.toUpperCase() + "</b> se encuentra publicada <br>" +
+                "<b>Estado de la publicacion: </b><select id='newsPost'>" +
+                "</select></p><br>" +
                 "<br>"
             );
-            showPicsWithButton(result.idNews);
+            if(result.level == "NORMAL"){
+                $("#newsLevel").append(
+                    "<option value='NORMAL' selected>Normal</option>" +
+                    "<option value='IMPORTANTE'>Importante</option>"
+                )
+            }else if(result.level == "IMPORTANTE"){
+                $("#newsLevel").append(
+                    "<option value='NORMAL' >Normal</option>" +
+                    "<option value='IMPORTANTE' selected>Importante</option>"
+                )
+            }
+            if(result.posted == "si"){
+                $("#newsPost").append(
+                    "<option value='si' selected>Publicar</option>" +
+                    "<option value='no'>No publicar todavia</option>"
+                )
+            }else if(result.posted == "no"){
+                $("#newsPost").append(
+                    "<option value='si' >Publicar</option>" +
+                    "<option value='no' selected>No publicar todavia</option>"
+                )
+            }
+            //showPicsWithButton(result.idNews);
             $("#actionsPics").append(
-                "<br><div class='line'></div><br>" +
-                "<form id='picForm' action='/api/uploadimage/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
-                "<input type='file' id='imageFile' name='imageFile'><br>" +
-                "<input class='formBtn' type='submit' id='summitPic' value='Subir foto'>" +
-                "</form><br><br>" +
                 "<div class='line'></div><br>"+
-                "<button class='formBtn' onclick='postNews(" + result.idNews + ")'>Publicar Noticia</button><br><br>" +
-                "<button class='formBtn' onclick='finishNew()'>Finalizar mas tarde</button>"
+                "<button class='formBtn' onclick='updateNews(" + result.idNews + ")'>Actualizar noticia</button><br><br>"
             )
         }
     })
@@ -97,23 +116,23 @@ $( document ).ready()
         })
     }
 
-    function postNews(id) {
+    function updateNews(id) {
         $.ajax({
-            url: "/api/news/" + id,
+            url: "/api/news/"+id,
             data: JSON.stringify({
-                "posted": "si"
-            }),
+                "location":$("#newsLocation").val(),
+                "title": $("#newsTittle").val(),
+                "introduction":$("#newsIntro").val(),
+                "news": $("#newsNews").val(),
+                "category":$("#newsCategory").val(),
+                "posted":$("#newsPost").val(),
+                "level":$("#newsLevel").val()}),
             contentType: "application/json; charset=utf-8",
-            method: "POST",
-            success: function () {
-                window.alert("Noticia publicada con exito");
-                window.location.href = "/todas";
+            method: "PUT",
+            success: function (result) {
+                window.alert("Se actualizo la noticia");
+                window.location.href="/noticias/"+result.idNews;
             }
         })
-    }
-
-    function finishNew() {
-        window.alert("Noticia guardada para ser publicada en otro momento con exito");
-        window.location.href = "/todas";
     }
 }

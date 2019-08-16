@@ -5,7 +5,6 @@ html, body {
     box-sizing: border-box;
 }
 
-
 .navbar {
     background-color: #edeff0;
     padding: 5px!important;
@@ -118,7 +117,10 @@ a:active {
     font-size: 1rem;
     text-align: justify;
     line-height: 30px;
-    word-break: break-all;
+
+    white-space:  pre-line;
+    overflow-wrap: break-word;
+    hyphens: auto
 }
 
 .first p::first-letter {
@@ -187,9 +189,11 @@ a:active {
     font-weight: normal;
     padding-top: 15px;
     line-height: 25px;
-    word-break: break-all;
     text-align: justify;
     width: 100%;
+    white-space:  pre-line;
+    overflow-wrap: break-word;
+    hyphens: auto
 }
 
 .tittle_news h1 {
@@ -197,9 +201,11 @@ a:active {
     font-size: 3.5rem;
     font-weight: bold;
     line-height: 60px;
-    word-break: break-word;
     text-align: left;
     width: 100%;
+    white-space:  pre-line;
+    overflow-wrap: break-word;
+    hyphens: auto
 }
 
 .destacado_text {

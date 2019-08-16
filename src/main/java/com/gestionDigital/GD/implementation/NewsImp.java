@@ -66,6 +66,9 @@ public class NewsImp implements NewsService {
     @Override
     public News updateNews(Long id, News news) {
         News n = this.newsRepository.findOne(id);
+        if ((n.getDate() == null) && (news.getPosted().equals("si"))){
+            n.setDate(new SimpleDateFormat("dd/MM/yyyy").format(new Date()));
+        }
         saveNews(n,news);
         return this.newsRepository.findOne(id);
     }

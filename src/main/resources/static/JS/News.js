@@ -40,12 +40,16 @@ if(url.match("noticias")){ // Bring the news with status posted
                     "<label>" + result[x].level + " </label><br>" +
                     "<div id='newsPics" + result[x].idNews + "'>" +
                     "<br>" +
-                    "<br>" +
-                    "<a href='/noticias/"+result[x].idNews+"'><button>Ir a la noticia</button></a><br>" +
-                    "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button><br>" +
-                    "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button><br>"
+                    "<br>"
                 )
                 previewPic(result[x].idNews);
+                $("#test").append(
+                    "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button>" +
+                    "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button>" +
+                    "<a href='/updatepics/"+result[x].idNews+"'><button>Agregar o quitar fotos a esta noticia</button></a><br>" +
+                    "-----------------------------------------------------------------<br>"
+                )
+
             }
 
         }
@@ -70,12 +74,15 @@ function deleteNews(id) {
                     "<label>" + result[x].category + " </label><br>" +
                     "<label>" + result[x].level + " </label><br>" +
                     "<br><div id='newsPics" + result[x].idNews + "'>" +
-                    "<br>" +
-                    "<a href='/noticias/"+result[x].idNews+"'><button>Ir a la noticia</button></a><br>" +
-                    "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button><br>" +
-                    "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button><br>"
+                    "<br>"
                 );
                 previewPic(result[x].idNews);
+                $("#test").append(
+                    "<button onclick='deleteNews("+result[x].idNews+")'>Eliminar noticia</button>" +
+                    "<button onclick='updateNews("+result[x].idNews+")'>Modificar noticia</button>" +
+                    "<a href='/updatepics/"+result[x].idNews+"'><button>Agregar o quitar fotos a esta noticia</button></a><br>" +
+                    "-----------------------------------------------------------------<br>"
+                )
             }
 
         }
@@ -97,8 +104,7 @@ function previewPic(id){
         method: "GET",
         success: function (result) {
             $("#newsPics"+id).append(
-                "<image width='320' height='240' src='/api/uploadimage/videoTest/" + result[0].idImage + "'><br>" +
-                "-----------------------------------------------------------------<br>"
+                "<image width='320' height='240' src='/api/uploadimage/videoTest/" + result[0].idImage + "'><br>"
             )
         }
     })

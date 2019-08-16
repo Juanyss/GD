@@ -39,17 +39,19 @@ public class UploadImageController {
         }
     }
 
-    @ApiOperation("Update the files related to a new")
-    @PostMapping("/updatepic/{id}")
-    public void uploadImageForUpdate(@PathVariable("id") Long id,@RequestParam("imageFile") MultipartFile imageFile,
+    @ApiOperation("Update  images, videos or audios on News detected by id")
+    @PostMapping("/update/{id}")
+    public void updateImage(@PathVariable("id") Long id,@RequestParam("imageFile") MultipartFile imageFile,
                             HttpServletResponse response) {
         try {
             this.imageUploadImp.saveImage(id,imageFile);
-            response.sendRedirect("/noticias/modificar/" + id);
+            response.sendRedirect("/updatepics/" + id);
         } catch (Exception e) {
             e.printStackTrace();
         }
     }
+
+
 
     @ApiOperation("Delete a file from a new")
     @GetMapping("/{id}/{x}")

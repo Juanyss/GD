@@ -20,13 +20,10 @@ $( document ).ready()
             showPicsWithButton(result.idNews);
             $("#actionsPics").append(
                 "<br><div class='line'></div><br>" +
-                "<form id='picForm' action='/api/uploadimage/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
+                "<form id='picForm' action='/api/uploadimage/update/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
                 "<input type='file' id='imageFile' name='imageFile'><br>" +
                 "<input class='formBtn' type='submit' id='summitPic' value='Subir foto'>" +
-                "</form><br><br>" +
-                "<div class='line'></div><br>"+
-                "<button class='formBtn' onclick='postNews(" + result.idNews + ")'>Publicar Noticia</button><br><br>" +
-                "<button class='formBtn' onclick='finishNew()'>Finalizar mas tarde</button>"
+                "</form>"
             )
         }
     })
@@ -95,25 +92,5 @@ $( document ).ready()
                 showPicsWithButton(result.idNews);
             }
         })
-    }
-
-    function postNews(id) {
-        $.ajax({
-            url: "/api/news/" + id,
-            data: JSON.stringify({
-                "posted": "si"
-            }),
-            contentType: "application/json; charset=utf-8",
-            method: "POST",
-            success: function () {
-                window.alert("Noticia publicada con exito");
-                window.location.href = "/todas";
-            }
-        })
-    }
-
-    function finishNew() {
-        window.alert("Noticia guardada para ser publicada en otro momento con exito");
-        window.location.href = "/todas";
     }
 }
