@@ -1,11 +1,12 @@
 $( document ).ready()
 {
-    var url = "http://192.168.0.136:8080"+location.pathname;
+    var url = "http://www.agenciadigital1.net"+location.pathname;
     $.ajax({
         url: "/api/news/" + window.location.href.split('/')[4],
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
+        	document.title = "Agencia Digital - " + result.title;
             $("#newsCategory").empty();
             $("#newsCategory").append(
                 "<span>"+result.category+"</span> <span>"+result.date+"</span>"
@@ -29,6 +30,14 @@ $( document ).ready()
             $("#shareWhatsapp").empty();
             $("#shareWhatsapp").append(
             "<a href='https://api.whatsapp.com/send?text="+ url +"' title='Comparte esta noticia'><div class='social_icon' id='whatsapp'></div></a>"
+            );
+            $("#shareFacebook").empty();
+            $("#shareFacebook").append(
+            "<a href='https://www.facebook.com/sharer/sharer.php?u="+ url +"' target='_blank'><div class='social_icon' id='facebook'></div></a>"
+            );
+            $("#shareTwitter").empty();
+            $("#shareTwitter").append(
+            "<a href='http://www.twitter.com/intent/tweet?url="+url+"&text=La actualidad en &hashtags=AgenciaDigital'><div class='social_icon' id='twitter'></div></a>"
             );
             showPics(result.idNews);
         }
@@ -90,8 +99,7 @@ $( document ).ready()
             for(x=0;x<result.length;x++){
                 if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
                     $("#weatherInfo").append(
-                        "<br><span>Temperatura: "+ result[x].weather.temp +"°C</span><br>"
-                        //"<span>"+ result[x].weather.description +"</span>"
+                        "<br><span>Temperatura: "+ result[x].weather.temp +"°C</span><br>"                        
                     )
                 }
             }
