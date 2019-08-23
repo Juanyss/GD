@@ -17,19 +17,19 @@ public class NewsController {
         this.newsImp = newsImp;
     }
 
-    @ApiOperation("Show important posted news")
+    @ApiOperation("Show important posted news(with status Important)")
     @GetMapping("/important")
     public List<News> showAllImportantPostedNews() {
         return this.newsImp.findAllImportantPosted();
     }
 
-    @ApiOperation("Show posted news")
+    @ApiOperation("Show posted news with status 'Normal'")
     @GetMapping("")
     public List<News> showAllPostedNews() {
         return this.newsImp.findAllPosted();
     }
 
-    @ApiOperation("Show all news")
+    @ApiOperation("Show all posted and not posted news")
     @GetMapping("/all")
     public List<News> showAllNews() {
         return this.newsImp.findAll();

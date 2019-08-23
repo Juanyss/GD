@@ -9,8 +9,14 @@ import org.springframework.web.bind.annotation.PathVariable;
 public class NewsWebController {
 
     @GetMapping(value = "/")
-    public String home() {
+    public String underConstruction() {
         return "index";
+    }
+    
+    //@PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value = "/home")
+    public String home() {
+        return "home";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")

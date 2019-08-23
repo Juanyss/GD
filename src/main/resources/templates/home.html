@@ -2,26 +2,192 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Tests</title>
-
-    <script	src="JS/jquery-3.3.1.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">    
+    <title>Agencia Digital</title>    
+    <script	src="/JS/jquery-3.3.1.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/home.css">
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
-    <div id="newsForm">
-        <input type="text" id="newsLocation" placeholder="Lugar">
-        <input type="text" id="newsTittle" placeholder="Titulo">
-        <input type="text" id="newsIntro" placeholder="Intro">
-        <textarea type="text" id="newsNews" placeholder="Noticia"></textarea>
-        <input type="text" id="newsCategory" placeholder="Categoria">
-        <select id="newsLevel" placeholder="Importancia">
-            <option value="NORMAL">Normal</option>
-            <option value="IMPORTANTE">Importante</option>
-        </select>
-        <button id="summitButton">Crear Noticia</button>
+<header>
+    <nav class="navbar col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="navbar_container container-fluid">
+            <a class="navbar-brand text-center" href="home.html">AGENCIA DIGITAL</a>
+            <div class="weather" id="weatherInfo"></div>
+        </div>
+    </nav>
+</header>
+<section>
+<div class="news container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12">
+    <div class="slider_news col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="tittle col-lg-12 col-sm-12 col-md-12 col-xs-12" id="important_news">
+        <h1>NOTICIAS IMPORTANTES</h1>
+    </div>
+        <div class="news_slider col-xs-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+
+        <div class="row" id='importantNews1'>
+            <div class="news_slider1 col-xs-12 col-sm-12 col-md-12 col-lg-7" >
+                <div class="text">
+                    <div class="text_data1 d-flex w-100 justify-content-between">
+                        <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                    </div>
+                    <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                    <div class="social_card1 d-flex justify-content-end">
+                        <button class="social_facebook"></button>
+                        <button class="social_twitter"></button>
+                        <button class="social_whatsapp"></button>
+                    </div>
+                </div>
+            </div>
+            <div class="contenedor col-xs-12 col-sm-12 col-md-12 col-lg-5">
+                <div class="news_slider2 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                    <div class="img_slider2"></div>
+                    <div class="text_slider2">
+                        <div class="text_data2 d-flex w-100 justify-content-between">
+                            <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                        </div>
+                        <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                        <div class="social_card1 d-flex justify-content-end">
+                            <button class="social_facebook"></button>
+                            <button class="social_twitter"></button>
+                            <button class="social_whatsapp"></button>
+                        </div>
+                    </div>
+                </div>
+                    <div class="news_slider3 col-xs-12 col-sm-12 col-md-12 col-lg-12">
+                        <div class="text_slider3">
+                            <div class="text_data6 d-flex w-100 justify-content-between">
+                                <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                            </div>
+                            <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="social_card1 d-flex justify-content-end">
+                                <button class="social_facebook"></button>
+                                <button class="social_twitter"></button>
+                                <button class="social_whatsapp"></button>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            <div class="row w-100">
+            <div class="news_slider4 col-lg-12"></div>
+        </div>
+            </div>
+        </div>
+        </div>
+    </div>
+    
+    <div class="important_news">
+        <div class="row">
+            <div class="important_news1 col-lg-12">
+                <div class="tittle col-lg-12 col-sm-12 col-md-12 col-xs-12" id="ultimas_noticias">
+                    <h1>ÚLTIMAS NOTICIAS</h1>
+                </div>
+                <div class="row" id='NormalNews'>
+                    <div class="important_card1 col-xs-12 col-sm-9 col-md-9 col-lg-4">
+                        <div class="text_card1">
+                            <div class="text_data4 d-flex w-100 justify-content-between">
+                                <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                            </div>
+                            <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                            <div class="social_card1 d-flex w-100 justify-content-end">
+                                <button class="social_facebook"></button>
+                                <button class="social_twitter"></button>
+                                <button class="social_whatsapp"></button>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="important_card2 col-xs-10 col-sm-10 col-md-10 col-lg-5 align">
+                        <div class="row">
+                            <div class="important_card7 col-xs-9 col-sm-9 col-md-9 col-lg-11">
+                                <div class="img_card2"></div>
+                                <div class="text_card2">
+                                    <div class="text_data5 d-flex w-100 justify-content-between">
+                                        <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                                    </div>
+                                    <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                                    <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                    <div class="social_card1 d-flex justify-content-end">
+                                        <button class="social_facebook"></button>
+                                        <button class="social_twitter"></button>
+                                        <button class="social_whatsapp"></button>
+                                    </div>
+                                </div>
+
+                            </div>
+                        </div>
+                        <div class="row">
+                            <div class="important_card6 col-xs-11 col-sm-11 col-md-11 col-lg-11"></div>
+                        </div>
+                    </div>
+
+                </div>
+
+                <div class="row" id='NormalNews2'>
+                    <div class="important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3">
+                        <div class="itext_card3">
+                            <div class="text_data6 d-flex w-100 justify-content-between align-items-center">
+                                <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                            </div>
+                            <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="social_card1 d-flex justify-content-end align-items-center">
+                                    <button class="social_facebook"></button>
+                                    <button class="social_twitter"></button>
+                                    <button class="social_whatsapp"></button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="important_card4 col-xs-9 col-sm-9 col-md-3 col-lg-3">
+                        <div class="itext_card4">
+                            <div class="text_data6 d-flex w-100 justify-content-between align-items-center">
+                                <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                            </div>
+                            <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="social_card1 d-flex justify-content-end">
+                                    <button class="social_facebook"></button>
+                                    <button class="social_twitter"></button>
+                                    <button class="social_whatsapp"></button>
+                                </div>
+                        </div>
+                    </div>
+                    <div class="important_card5 col-xs-9 col-sm-9 col-md-3 col-lg-3">
+                        <div class="itext_card5">
+                            <div class="text_data6 d-flex w-100 justify-content-between align-items-center">
+                                <h6>POLÍTICA</h6><h6>14/08/19</h6>
+                            </div>
+                            <h1>Excepteur, sunt in culpa qui officia deserunt mollit anim id est laborum.</h1>
+                            <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.</p>
+                                <div class="social_card1 d-flex justify-content-end">
+                                    <button class="social_facebook"></button>
+                                    <button class="social_twitter"></button>
+                                    <button class="social_whatsapp"></button>
+                                </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
 
-    <script src="JS/test.js"></script>
+</section>
+<footer>
+    <nav class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="footer_container container-fluid text-center">
+            <div class="social_footer col-xs-12 col-sm-12 col-md-12  col-lg-12">
+                <a href="#" title="Visitanos en nuestras redes"><div class="social_icon" id="facebook_footer"></div></a>
+                <a href="#" title="Visitanos en nuestras redes"><div class="social_icon" id="twitter_footer"></div></a>
+            </div>
+            <small>©2019 Agencia Digital.Todos los derechos reservados.</small>
+        </div>
+    </nav>
+</footer>
+<script src="/JS/Home.js"></script>
 </body>
-
-
 </html>

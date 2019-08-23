@@ -1,6 +1,6 @@
 $( document ).ready()
 {
-    var url = "http://www.agenciadigital1.net"+location.pathname;
+    
     $.ajax({
         url: "/api/news/" + window.location.href.split('/')[4],
         contentType: "application/json; charset=utf-8",
@@ -29,15 +29,15 @@ $( document ).ready()
             );
             $("#shareWhatsapp").empty();
             $("#shareWhatsapp").append(
-            "<a href='https://api.whatsapp.com/send?text="+ url +"' title='Comparte esta noticia'><div class='social_icon' id='whatsapp'></div></a>"
+            "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result.idNews+"' title='Comparte esta noticia'><div class='social_icon' id='whatsapp'></div></a>"
             );
             $("#shareFacebook").empty();
             $("#shareFacebook").append(
-            "<a href='https://www.facebook.com/sharer/sharer.php?u="+ url +"' target='_blank'><div class='social_icon' id='facebook'></div></a>"
+            "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result.idNews+"' target='_blank'><div class='social_icon' id='facebook'></div></a>"
             );
             $("#shareTwitter").empty();
             $("#shareTwitter").append(
-            "<a href='http://www.twitter.com/intent/tweet?url="+url+"&text=La actualidad en &hashtags=AgenciaDigital'><div class='social_icon' id='twitter'></div></a>"
+            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result.idNews+"&text="+result.title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><div class='social_icon' id='twitter'></div></a>"
             );
             showPics(result.idNews);
         }
@@ -95,14 +95,33 @@ $( document ).ready()
         contentType: "application/json; charset=utf-8",
         method: "GET",
         success: function (result) {
-            $("#weatherInfo").empty();
+        	$("#weatherInfo").empty();
             for(x=0;x<result.length;x++){
                 if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
+                	console.log(result[x].weather.description);                	
                     $("#weatherInfo").append(
-                        "<br><span>Temperatura: "+ result[x].weather.temp +"°C</span><br>"                        
+                        "<span>"+ result[x].weather.temp +"°C - </span>"                        
                     )
+                    
+                    if(result[x].weather.description == "Algo nublado"){
+                		$("#weatherInfo").append(
+                                "<image width='25' height='25' src='/img/AlgoNublado.svg'></image>"                        
+                            )
+                	}else if(result[x].weather.description == "Despejado"){
+                		$("#weatherInfo").append(
+                                "<image width='25' height='25' src='/img/despejado.png'></image>"                        
+                            )
+                	}else if(result[x].weather.description == "Nublado"){
+                		$("#weatherInfo").append(
+                                "<image width='25' height='25' src='/img/nublado.png'></image>"                        
+                            )
+                	}else if(result[x].weather.description.includes("lluvia")){
+                		$("#weatherInfo").append(
+                                "<image width='25' height='25' src='/img/lluvia.png'></image>"                       
+                            )
+                            }
+                    }
                 }
-            }
         }
     })
 
@@ -140,142 +159,6 @@ $( document ).ready()
 
     $("#Prev").click(function(){
         $("#Slider").prepend($("#Slider img:last-of-type"));
-    });
-
-
-
-
-    //--------------------------------------------------------
-
-    function showPicsWithButton(id) {
-        $.ajax({
-            url: "/api/news/pics/" + id,
-            contentType: "application/json; charset=utf-8",
-            method: "GET",
-            success: function (result) {
-                $("#newsPics").empty();
-                for (x = 0; x < result.length; x++) {
-                    if (result[x].type == "image") {
-                        $("#newsPics").append(
-                            "<image width='320' height='240' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
-                            "<button id='summitButton' onclick='removePic("+ id + ","+ result[x].idImage +")'>Quitar foto</button>"
-                        )
-                    } else if (result[x].type == "video") {
-                        $("#newsPics").append(
-                            "<video width='320' height='240' controls>" +
-                            "<source src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
-                            "</video>" +
-                            "<button id='summitButton' onclick='removePic("+ id + ","+ result[x].idImage +")'>Quitar foto</button>"
-                        )
-                    }
-
-                }
-            }
-        })
-    }
-
-
-    function updateNews(id) {
-        $.ajax({
-            url: "/api/news/"+id,
-            data: JSON.stringify({
-                "location":$("#newsLocation").val(),
-                "title": $("#newsTittle").val(),
-                "introduction":$("#newsIntro").val(),
-                "news": $("#newsNews").val(),
-                "category":$("#newsCategory").val(),
-                "level":$("#newsLevel").val()}),
-            contentType: "application/json; charset=utf-8",
-            method: "PUT",
-            success: function (result) {
-                localStorage.setItem("news", result.idNews)
-                window.location.href="/noticias/"+result.idNews;
-            }
-        })
-    }
-
-    function removePic(id,x){
-        $.ajax({
-            url: "/api/uploadimage/" + id + "/" + x,
-            contentType: "application/json; charset=utf-8",
-            method: "GET",
-            success: function (result) {
-                $("#test").empty();
-                $("#test").append(
-                    "<input id='newsLocation' value='" + result.location + " '><br>" +
-                    "<input id='newsTittle' value='" + result.title + "'><br>" +
-                    "<input id='newsIntro' value='" + result.introduction + "'><br>" +
-                    "<input id='newsNews' value='" + result.news + "'><br>" +
-                    "<input id='newsCategory' value='" + result.category + "'><br>" +
-                    "<select id='newsLevel' placeholder='Importancia'>" +
-                    "<option value='NORMAL'>Normal</option>"+
-                    "<option value='IMPORTANTE'>Importante</option>"+
-                    "</select>"+
-                    "<br><div id='newsPics'></div><br>" +
-                    "<form id='picForm' action='/api/uploadimage/updatepic/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
-                    "<input type='file' id='imageFile' name='imageFile'>" +
-                    "<input type='submit' id='summitPic' value='Subir foto'>" +
-                    "</form><br><br>" +
-                    "<button id='summitButton' onclick='updateNews("+ result.idNews +")'>Modificar Noticia</button>" +
-                    "<br>"
-                );
-                showPicsWithButton(result.idNews);
-            }
-        })
-    }
-
-    $("#picForm").submit(function(e) {
-        e.preventDefault(); // avoid to execute the actual submit of the form.
-
-        $.ajax({
-            type: "POST",
-            enctype: 'multipart/form-data',
-            url: url,
-            data: form.serialize(), // serializes the form's elements.
-            processData: false, //prevent jQuery from automatically transforming the data into a query string
-            contentType: false,
-            cache: false,
-            success: function(result){
-
-            }
-        });
-    })
-
-    function postNews(id) {
-        $.ajax({
-            url: "/api/news/" + id,
-            data: JSON.stringify({
-                "posted":"si"}),
-            contentType: "application/json; charset=utf-8",
-            method: "POST",
-            success: function (result) {
-                $("#test").empty();
-                $("#test").append(
-                    "<input id='newsLocation' value='" + result.location + " '><br>" +
-                    "<input id='newsTittle' value='" + result.title + "'><br>" +
-                    "<input id='newsIntro' value='" + result.introduction + "'><br>" +
-                    "<input id='newsNews' value='" + result.news + "'><br>" +
-                    "<input id='newsCategory' value='" + result.category + "'><br>" +
-                    "<select id='newsLevel' placeholder='Importancia'>" +
-                    "<option value='NORMAL'>Normal</option>"+
-                    "<option value='IMPORTANTE'>Importante</option>"+
-                    "</select><br>"+
-                    "<label>Esta noticia " + result.posted + " se encuentra publicada - Cambiar?</label>" +
-                    "<select id='newsPosted' placeholder='Importancia'>" +
-                    "<option value='no'>NO</option>"+
-                    "<option value='si'>SI</option>"+
-                    "</select><button onclick='postNews(" + result.idNews + ")'>Cambiar</button><br>"+
-                    "<br><div id='newsPics'></div><br>" +
-                    "<form id='picForm' action='/api/uploadimage/updatepic/" + result.idNews + "' enctype='multipart/form-data' method='post'>" +
-                    "<input type='file' id='imageFile' name='imageFile'>" +
-                    "<input type='submit' id='summitPic' value='Subir foto'>" +
-                    "</form><br><br>" +
-                    "<button id='summitButton' onclick='updateNews("+ result.idNews +")'>Modificar Noticia</button>" +
-                    "<br>"
-                );
-                showPicsWithButton(result.idNews);
-            }
-        })
-    }
+    });    
 
 }

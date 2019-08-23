@@ -14,13 +14,21 @@ html, body {
     position: fixed;
     z-index: 1;
     box-sizing: border-box;
+    top: 0;
+    height: 60px;
+}
+
+.navbar_container {
+    width: 85%;
 }
 
 
 .weather {
-    text-align: right;
+    /*background-color: coral;*/
     width: 50%;
-    height: 70px;
+    height: 30px;
+    
+    text-align: right;
 }
 
 .navbar-brand {
@@ -70,14 +78,17 @@ a:active {
 }
 
 .videos {
-    height: 100vh;
+    height: auto;
     margin-top: 10px;
     padding-right: 0;
     padding-left: 0;
     box-sizing: border-box;
     overflow-y: auto;
     margin-left: 20px;
+    position:relative;
+    
 }
+
 
 .social {
     border-top: 2px solid red;
@@ -543,6 +554,9 @@ a:active {
     padding-left: 10px;
     font-weight: bolder;
     color: #FF0000;
+    
+    position:absolute;
+    top: 0;
 }
 
 .btn_fixed {
@@ -651,32 +665,27 @@ a:active {
 
 
 @media all and (max-width: 599px) {
-    .navbar_container.container-fluid {
-        height: 45px;
-        width: 100%;
-
+    .navbar_container {
+        display: flex !important;
+        justify-content: center !important;
     }
 
 
     .navbar_container {
         display: flex !important;
-        text-align: left;
-        padding: 0;
-        margin: 0;
+        justify-content: center !important;
     }
 
     .navbar {
-        height: 45px;
+        height: 85px;
     }
 
     .weather {
-        display: flex !important;
-        justify-content: flex-end;
-        text-align: right;
-        padding-top: 3%;
-        width: 50%;
-        height: 100%;
-
+        /*background-color: coral;*/
+        width: 70%;
+        height:20px;
+        
+        text-align: center;
     }
 
     .footer_container {
@@ -742,7 +751,7 @@ a:active {
         overflow: hidden;
         position: relative;
         width: 75%;
-        height: 600px;
+        height: 500px;
         padding: 20px;
         background-color: rgba(0,0,0,0.9);
         margin-top: 20px;
@@ -767,7 +776,11 @@ a:active {
         height: 200px;
     }
 
-
+	#otherNews{
+		padding-top:30px;
+		position: absolute;
+		top:0
+	}
 
     .news_wrap {
         display: flex;
@@ -811,6 +824,7 @@ a:active {
         align-items: center;
         justify-content: space-around;
         height:auto;
+        
     }
 
         .navbar {
@@ -886,7 +900,7 @@ a:active {
 #Arrows{
     display: flex;
     justify-content: space-between;
-    height: 30px;
+    height: 100%;
     position: absolute;
     width: 100%;
 }
@@ -895,18 +909,18 @@ a:active {
     background-color: rgba(255, 255, 255, .25);
     color: #1C1D21;
     cursor: pointer;
-    height: 30px;
+    height: 100%;
     padding: 15px;
 
     transition: background-color .5s, color .5s;
 }
 
 #Arrows i:first-of-type{
-    padding-right: 20px;
+    padding-right: 50px;
 }
 
 #Arrows i:last-of-type{
-    padding-left: 20px;
+    padding-left: 50px;
 }
 
 #Arrows i:hover{
