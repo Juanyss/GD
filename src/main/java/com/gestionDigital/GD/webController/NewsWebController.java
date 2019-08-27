@@ -8,15 +8,21 @@ import org.springframework.web.bind.annotation.PathVariable;
 @Controller
 public class NewsWebController {
 
-    @GetMapping(value = "/")
+    /*@GetMapping(value = "/")
     public String underConstruction() {
         return "index";
+    }*/
+    
+    //@PreAuthorize("hasAnyRole('ADMIN')")
+    @GetMapping(value = "/")
+    public String home() {
+        return "home";
     }
     
     //@PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/home")
-    public String home() {
-        return "home";
+    @GetMapping(value = "/todaslasnoticias")
+    public String moreNews() {
+        return "moreNews";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
@@ -45,13 +51,13 @@ public class NewsWebController {
         return "News";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/noticias")
     public String News() {
         return "News";
     }
 
-    @PreAuthorize("hasAnyRole('ADMIN')")
+    //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/noticias/{id}")
     public String SingleNews(@PathVariable("id") Long id) {
         return "Noticia";

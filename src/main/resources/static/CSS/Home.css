@@ -562,3 +562,8 @@ section {
         background-color: #111111;
     }
 }
+
+.moreNews{
+	width: 100%;
+	position:relative
+}

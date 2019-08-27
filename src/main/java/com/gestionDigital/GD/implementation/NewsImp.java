@@ -93,4 +93,9 @@ public class NewsImp implements NewsService {
     public List<News> findAllImportantPosted() {
         return this.newsRepository.showAllImportantPosted();
     }
+    
+    @Override
+	public List<News> moreNews() {		
+    	return this.newsRepository.showAllImportantAndNormalNewsPosted();
+	}
 }

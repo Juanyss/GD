@@ -197,13 +197,22 @@ $( document ).ready()
                         "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[4].idNews+"&text="+result[4].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
                         "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[4].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
                         "</div>" +
+						"</div>" +						
 						"</div>" +
-						"</div>"
+						"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
+						"<button onClick='goToMoreNews()' class='moreNews'>Más noticias</button>" +
+						"</div>" 
 						
 	            );
 	            previewPic(result[0].idNews, result[1].idNews);
 	            }
 	    })
+	    
+	    
+	    
+	 function goToMoreNews(){
+		 document.location.href = '/todaslasnoticias';
+	 }
 	    
 	    
 	
@@ -213,16 +222,17 @@ $( document ).ready()
         url: "https://ws.smn.gob.ar/map_items/weather",
         contentType: "application/json; charset=utf-8",
         method: "GET",
-        success: function (result) {        	
+        success: function (result) {
+        	
             $("#weatherInfo").empty();
             for(x=0;x<result.length;x++){
                 if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
-                	console.log(result[x].weather.description);                	
+                	console.log(result[x].weather.description);
                     $("#weatherInfo").append(
                         "<span>"+ result[x].weather.temp +"°C - </span>"                        
                     )
                     
-                    if(result[x].weather.description == "Algo nublado"){
+                    if(result[x].weather.description.includes("nublado")){
                 		$("#weatherInfo").append(
                                 "<image width='25' height='25' src='/img/AlgoNublado.svg'></image>"                        
                             )
@@ -230,7 +240,7 @@ $( document ).ready()
                 		$("#weatherInfo").append(
                                 "<image width='25' height='25' src='/img/despejado.png'></image>"                        
                             )
-                	}else if(result[x].weather.description == "Nublado"){
+                	}else if(result[x].weather.description.includes("Nublado")){
                 		$("#weatherInfo").append(
                                 "<image width='25' height='25' src='/img/nublado.png'></image>"                        
                             )
@@ -243,6 +253,8 @@ $( document ).ready()
                 }
             }
     })
+    
+    
     
     
 }

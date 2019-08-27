@@ -31,6 +31,9 @@ public interface NewsRepository extends CrudRepository<News, Long> {
 
      @Query("select n from News n where n.posted = 'si' and n.idNews <> :id order by n.idNews desc")
      List<News> otherNews(@Param("id") Long id);
+     
+     @Query("select n from News n where n.posted = 'si' order by n.idNews desc")
+	 List<News> showAllImportantAndNormalNewsPosted();
 
 
 }

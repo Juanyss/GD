@@ -25,8 +25,14 @@ public class NewsController {
 
     @ApiOperation("Show posted news with status 'Normal'")
     @GetMapping("")
-    public List<News> showAllPostedNews() {
+    public List<News> showAllNormalPostedNews() {
         return this.newsImp.findAllPosted();
+    }
+    
+    @ApiOperation("Show posted news with status 'Normal'")
+    @GetMapping("/morenews")
+    public List<News> showAllPostedNews() {
+        return this.newsImp.moreNews();
     }
 
     @ApiOperation("Show all posted and not posted news")

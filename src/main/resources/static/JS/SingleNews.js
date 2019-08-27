@@ -111,7 +111,7 @@ $( document ).ready()
                 		$("#weatherInfo").append(
                                 "<image width='25' height='25' src='/img/despejado.png'></image>"                        
                             )
-                	}else if(result[x].weather.description == "Nublado"){
+                	}else if(result[x].weather.description.includes("Nublado")){
                 		$("#weatherInfo").append(
                                 "<image width='25' height='25' src='/img/nublado.png'></image>"                        
                             )
