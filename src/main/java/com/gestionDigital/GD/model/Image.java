@@ -6,53 +6,67 @@ import java.util.Arrays;
 @Entity
 @Table(name = "Image")
 public class Image {
-    @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
-    private Long idImage;
+	@Id
+	@GeneratedValue(strategy = GenerationType.IDENTITY)
+	private Long idImage;
 
-    @Column(name = "ImageByte", columnDefinition="LONGBLOB")
-    private byte[] bytes;
+	@Column(name = "ImageByte", columnDefinition = "LONGBLOB")
+	private byte[] bytes;
 
-    @Column(name = "type")
-    private String type;
+	@Column(name = "type")
+	private String type;
 
-    public Image() {
-    }
+	@Column(name = "orientation")
+	private String orientation;
 
-    public Image(byte[] bytes, String type) {
-        this.bytes = bytes;
-        this.type = type;
-    }
+	public Image() {
+	}
 
-    public Long getIdImage() {
-        return idImage;
-    }
+	public Image(byte[] bytes, String type, String orientation) {
+		this.bytes = bytes;
+		this.type = type;
+		this.orientation = orientation;
+	}
 
-    public void setIdImage(Long idImage) {
-        this.idImage = idImage;
-    }
+	public Long getIdImage() {
+		return idImage;
+	}
 
-    public byte[] getBytes() {
-        return bytes;
-    }
+	public void setIdImage(Long idImage) {
+		this.idImage = idImage;
+	}
 
-    public void setBytes(byte[] bytes) {
-        this.bytes = bytes;
-    }
+	public byte[] getBytes() {
+		return bytes;
+	}
 
-    public String getType() {
-        return type;
-    }
+	public void setBytes(byte[] bytes) {
+		this.bytes = bytes;
+	}
 
-    public void setType(String type) {
-        this.type = type;
-    }
+	public String getType() {
+		return type;
+	}
 
-    @Override
-    public String toString() {
-        return "Image{" +
-                "idImage=" + idImage +
-                ", bytes=" + Arrays.toString(bytes) +
-                '}';
-    }
+	public void setType(String type) {
+		this.type = type;
+	}
+	
+	
+
+	public String getOrientation() {
+		return orientation;
+	}
+
+	public void setOrientation(String orientation) {
+		this.orientation = orientation;
+	}
+
+	@Override
+	public String toString() {
+		return "Image [idImage=" + idImage + ", bytes=" + Arrays.toString(bytes) + ", type=" + type + ", orientation="
+				+ orientation + "]";
+	}
+
+	
 }

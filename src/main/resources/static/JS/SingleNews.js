@@ -25,7 +25,7 @@ $( document ).ready()
             );
             $("#newsLocation").empty();
             $("#newsLocation").append(
-                result.location
+                result.location 
             );
             $("#shareWhatsapp").empty();
             $("#shareWhatsapp").append(
@@ -98,7 +98,7 @@ $( document ).ready()
         	$("#weatherInfo").empty();
             for(x=0;x<result.length;x++){
                 if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
-                	console.log(result[x].weather.description);                	
+                	             	
                     $("#weatherInfo").append(
                         "<span>"+ result[x].weather.temp +"°C - </span>"                        
                     )
@@ -134,17 +134,36 @@ $( document ).ready()
             success: function (result) {
                 $("#Slider").empty();
                 for (x = 0; x < result.length; x++) {
-                    if (result[x].type == "image") {
-                        $("#Slider").append(
-                            "<img src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
-                        );
-                    } else if (result[x].type == "video") {
-                        $("#newsPics").append(
-                            "<video width='320' height='240' controls>" +
-                            "<source src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
-                            "</video>"
-                        )
-                    }
+                    if (result[x].type == "image") {    
+                    	//Compare width and height to know if is portrait or landscape
+                    	//if (img.height > img.width) {
+                    		if(result[x].orientation == "P"){  
+                    			$("#Slider").append(
+                    				"<img class='portrait' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+                    				
+                    			);
+                    		}else if(result[x].orientation == "L"){
+                    			$("#Slider").append(
+                        				"<img class='landscape' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+                        				
+                        			);
+                    		}else{
+                    			$("#Slider").append(
+                    				"<img class='portraitScuare' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+                    				
+                    			);                    			
+                    		}
+                    		
+                    		
+                    		
+                    	
+                    	//Hide all the pictures and show only the first
+                    	$('#Slider').each(function() { 
+                    		  var $this= jQuery(this);
+                    		  $this.find(':not(img:first)').hide();
+
+                    		}); 
+                    } 
                 }
             }
         })
@@ -152,13 +171,24 @@ $( document ).ready()
 
     }
     //----------------------------------------------------------
-    //For slider
+    // When click on next or preview hide all the pictures and show the first one
     $("#Next").click(function(){
         $("#Slider").append($("#Slider img:first-of-type"));
+        $('#Slider').each(function() { 
+  		  var $this= jQuery(this);
+  		  $this.find(':not(img:first)').hide();
+  		  $this.find('img:first').show();
+
+  		}); 
     });
 
     $("#Prev").click(function(){
         $("#Slider").prepend($("#Slider img:last-of-type"));
+        $('#Slider').each(function() { 
+  		  var $this= jQuery(this);
+  		  $this.find(':not(img:first)').hide();
+  		  $this.find('img:first').show();
+  		}); 
     });    
 
 }

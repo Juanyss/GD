@@ -22,11 +22,13 @@ public class ImageUploadImp implements ImageUploadService {
     }
 
     @Override
-    public void saveImage(Long id,MultipartFile imageFile) throws Exception {
-
+    public void saveImage(Long id,MultipartFile imageFile) throws Exception { 
         byte[] bytes = imageFile.getBytes();
         Image i = new Image();
         i.setBytes(bytes);
+        //System.out.println(orientation);
+        
+        //i.setOrientation(orientation);
         if(imageFile.getContentType().contains("image")){
             i.setType("image");
         }else if(imageFile.getContentType().contains("video")){
@@ -53,4 +55,13 @@ public class ImageUploadImp implements ImageUploadService {
         this.imageRepository.delete(i);
         return n;
     }
+    
+    @Override
+	public void saveImageOrientation(Long id, String orientation) {
+    	Image i = this.imageRepository.findOne(id);
+    	i.setOrientation(orientation);
+    	this.imageRepository.save(i);		
+	}
+    
+    
 }

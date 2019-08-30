@@ -46,31 +46,100 @@ $( document ).ready()
     })
 
     function showPicsWithButton(id) {
-        $.ajax({
-            url: "/api/news/pics/" + id,
-            contentType: "application/json; charset=utf-8",
-            method: "GET",
-            success: function (result) {
-                $("#newsPics").empty();
-                for (x = 0; x < result.length; x++) {
-                    if (result[x].type == "image") {
-                        $("#newsPics").append(
-                            "<br><image width='320' height='240' src='/api/uploadimage/videoTest/" + result[x].idImage + "'><br>" +
-                            "<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
-                        )
-                    } else if (result[x].type == "video") {
-                        $("#newsPics").append(
-                            "<video width='320' height='240' controls>" +
-                            "<source src='/api/uploadimage/videoTest/" + result[x].idImage + "'>" +
-                            "</video>" +
-                            "<button id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
-                        )
-                    }
+		$
+				.ajax({
+					url : "/api/news/pics/" + id,
+					contentType : "application/json; charset=utf-8",
+					method : "GET",
+					success : function(result) {
+						$("#newsPics")
+						.append("*Para guardar la horientacion de la foto hacer click en la foto y escribir su orientacion (Horizontal, Vertical o Cuadrado)<br>");
+						for (x = 0; x < result.length; x++) {
+							if (result[x].type == "image") {
+								// Compare orientation for pictures
 
-                }
-            }
-        })
-    }
+								if (result[x].orientation == "P") {
+									$("#newsPics")
+											.append(
+													"<img width='200' heigth='300' id='"
+															+ result[x].idImage
+															+ "' src='/api/uploadimage/videoTest/"
+															+ result[x].idImage
+															+ "' onclick='picOrientation("
+															+ result[x].idImage
+															+ ")'><br>"
+															+ "<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
+
+											);
+									$("#newsLocation").append("portrait");
+								} else if (result[x].orientation == "L") {
+									$("#newsPics")
+											.append(
+													"<img width='300' heigth='200' id='"
+															+ result[x].idImage
+															+ "' src='/api/uploadimage/videoTest/"
+															+ result[x].idImage
+															+ "' onclick='picOrientation("
+															+ result[x].idImage
+															+ ")'><br>"
+															+"<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"															
+
+											);
+								} else {
+									$("#newsPics")
+											.append(
+													"<img width='250' heigth='250' id='"
+															+ result[x].idImage
+															+ "' src='/api/uploadimage/videoTest/"
+															+ result[x].idImage
+															+ "' onclick='picOrientation("
+															+ result[x].idImage
+															+ ")'><br>"
+															+"<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
+															);
+								}
+
+							}
+						}
+					}
+				})
+	}
+
+	function picOrientation(id) {
+		var orientation = prompt('Orientacion de la foto (Horizontal, Vertical o Cuadrada)')
+
+		switch (orientation.toLowerCase()) {
+		case "horizontal":
+			var orientation = "L";
+			break;
+		case "vertical":
+			var orientation = "P";
+			break;
+		case "cuadrado":
+			var orientation = "S";
+			break;
+		default:
+			alert("Error - Solo puede elegir horizontal, vertical o cuadrado");
+		}
+		
+		
+
+		if ((orientation == "L") || (orientation == "P") || (orientation == "S")) {
+			$.ajax({
+				url : "/api/uploadimage/orientation/" + id,
+				data : JSON.stringify({
+					"orientation" : orientation
+				}),
+				contentType : "application/json; charset=utf-8",
+				method : "POST",
+				success : function(result) {
+					alert("Orientacion de la foto guardada")
+				}
+			})
+		}
+
+	}
+
 
     function removePic(id, x) {
         $.ajax({
@@ -94,3 +163,8 @@ $( document ).ready()
         })
     }
 }
+
+
+
+
+"<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
