@@ -287,7 +287,7 @@ a:active {
 .img_news {
 	width: 100%;
 	height: 200px;
-	background-color: aqua;
+	background-color: black;
 	margin: 0;
 	padding: 0;
 }
@@ -347,7 +347,7 @@ a:active {
 .img_news2 {
 	width: 100%;
 	height: 200px;
-	background-color: aqua;
+	background-color: black;
 	margin: 0;
 	padding: 0;
 }
@@ -407,7 +407,7 @@ a:active {
 .img_news3 {
 	width: 100%;
 	height: 200px;
-	background-color: aqua;
+	background-color: black;
 	margin: 0;
 	padding: 0;
 }
@@ -467,7 +467,7 @@ a:active {
 .img_news4 {
 	width: 100%;
 	height: 200px;
-	background-color: aqua;
+	background-color: black;
 	margin: 0;
 	padding: 0;
 }
@@ -672,6 +672,13 @@ a:active {
 		width: 95%;
 		height: auto;
 	}
+	
+	.img_news2 {		
+		height: 200px;
+		width: 100%;
+		padding-left: 30%;
+		padding-right: 30%;
+	}
 	#Slider {
 		width: 100%;
 		margin: 0 auto;
@@ -693,8 +700,6 @@ a:active {
 	.social_wrap {
 		width: 100%;
 	}
-	
-	
 	.portraitScuare {
 		width: 70%;
 		height: 95%;
@@ -706,8 +711,6 @@ a:active {
 		right: 0;
 		bottom: 0;
 	}
-	
-	
 	.portrait {
 		width: 50%;
 		height: 95%;
@@ -719,8 +722,6 @@ a:active {
 		right: 0;
 		bottom: 0;
 	}
-	
-	
 	.landscape {
 		width: 100%;
 		height: 100%;
@@ -731,11 +732,57 @@ a:active {
 		left: 0;
 		right: 0;
 		bottom: 0;
-		
+	}
+	#Arrows #Next {
+		background-image: url("/img/right-arrow.png");
+		background-repeat: no-repeat;
+		background-size: 25px 25px;
+		background-position: right;
+	}
+	#Arrows #Prev {
+		background-image: url("/img/left-arrow.png");
+		background-repeat: no-repeat;
+		background-size: 25px 25px;
+		background-position: left;
+	}
+	#Arrows i {
+		background-color: transparent;
+		color: #1C1D21;
+		cursor: pointer;
+		height: 100%;
+		padding: 15px;
+		transition: background-color .5s, color .5s;
 	}
 }
 
-@media all and (min-width: 600px) and (max-width: 2000px) {
+@media all and (min-width: 600px) and (max-width: 1100px) {
+	.normalPicsContainer {
+		position: absolute;
+		top: 0;
+		height: 100%;
+		width: 100%;
+		background-color: black;
+	}
+	#Arrows #Next {
+		background-image: url("/img/right-arrow.png");
+		background-repeat: no-repeat;
+		background-size: 50px 50px;
+		background-position: right;
+	}
+	#Arrows #Prev {
+		background-image: url("/img/left-arrow.png");
+		background-repeat: no-repeat;
+		background-size: 50px 50px;
+		background-position: left;
+	}
+	#Arrows i {
+		background-color: transparent;
+		color: #1C1D21;
+		cursor: pointer;
+		height: 100%;
+		padding: 15px;
+		transition: background-color .5s, color .5s;
+	}
 	.card_news {
 		width: 100%;
 		height: auto;
@@ -748,7 +795,7 @@ a:active {
 		overflow: hidden;
 		position: relative;
 		width: 75%;
-		height: 500px;
+		height: 400px;
 		padding: 20px;
 		background-color: rgba(0, 0, 0, 0.9);
 		margin-top: 20px;
@@ -768,9 +815,15 @@ a:active {
 	.img_news {
 		height: 200px;
 	}
+	
+	.img_news2 {		
+		height: 200px;
+		width: 100%;
+		padding-left: 30%;
+		padding-right: 30%;
+	}
 	#otherNews {
-		padding-top: 30px;
-		position: absolute;
+		padding-top: 30px;		
 		top: 0
 	}
 	.news_wrap {
@@ -800,8 +853,9 @@ a:active {
 		display: flex;
 		flex-direction: column;
 		align-items: center;
-		justify-content: space-around;
+		
 		height: auto;
+		
 	}
 	.navbar {
 		height: 70px;
@@ -819,7 +873,6 @@ a:active {
 	.wrap {
 		margin-top: 150px;
 	}
-	
 	.news_wrap {
 		display: flex;
 		flex-direction: column;
@@ -859,11 +912,188 @@ a:active {
 		right: 0;
 		bottom: 0;
 	}
-	
-	
-}
 }
 
+@media all and (min-width: 1101px){
+.card_news {
+	width: 100%;
+	height: auto;
+}
+
+#Slideshow {
+	align-items: center;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	width: 75%;
+	height: 500px;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.9);
+	margin-top: 20px;
+	left: 12.5%;
+}
+
+.empty {
+	height: 30px;
+}
+
+/* wrap {
+        margin-top: 200px;
+    }*/
+.social_wrap {
+	width: 100%;
+	padding-left: 12.5%;
+}
+
+.img_news {
+	height: 200px;
+}
+
+#otherNews {
+	padding-top: 30px;
+	position: absolute;
+	top: 0
+}
+
+.news_wrap {
+	display: flex;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: space-around;
+	height: auto;
+	overflow-x: hidden;
+}
+
+.more_news {
+	width: 30%;
+	padding: 5px;
+}
+
+.navbar_container.container-fluid {
+	height: auto;
+}
+
+.news_text.col-xs-8 {
+	width: 90%;
+	margin: auto;
+}
+
+.img_news {
+	height: 200px;
+}
+
+.img_news2 {		
+		height: 200px;
+		width: 100%;
+		padding-left: 30%;
+		padding-right: 30%;
+	}
+
+.videos {
+	width: 100%;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: space-around;
+	height: auto;
+}
+
+.navbar {
+	height: 70px;
+}
+
+.footer_container {
+	width: 90%;
+	height: auto;
+}
+
+.footer {
+	height: auto;
+}
+
+.article.col-md-12 {
+	height: 80px;
+}
+
+.wrap {
+	margin-top: 150px;
+}
+
+.news_wrap {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	justify-content: center;
+}
+
+.portrait {
+	width: 33%;
+	height: 95%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.portraitScuare {
+	width: 55%;
+	height: 95%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.landscape {
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+#Slideshow {
+	align-items: center;
+	display: flex;
+	flex-direction: column-reverse;
+	justify-content: center;
+	overflow: hidden;
+	position: relative;
+	width: 75%;
+	height: 500px;
+	padding: 20px;
+	background-color: rgba(0, 0, 0, 0.9);
+	margin-top: 20px;
+	left: 12.5%;
+}
+
+#Arrows #Next {
+	background-image: url("/img/right-arrow.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: right;
+}
+
+#Arrows #Prev {
+	background-image: url("/img/left-arrow.png");
+	background-repeat: no-repeat;
+	background-size: contain;
+	background-position: left;
+}
+
+}
 .flex-caption {
 	width: 96%;
 	padding: 2%;
@@ -877,8 +1107,6 @@ a:active {
 }
 
 /*Slide*/
-
-
 #Arrows {
 	display: flex;
 	justify-content: space-between;
@@ -888,7 +1116,7 @@ a:active {
 }
 
 #Arrows i {
-	background-color: rgba(255, 255, 255, .25);
+	background-color: transparent;
 	color: #1C1D21;
 	cursor: pointer;
 	height: 100%;
@@ -902,9 +1130,4 @@ a:active {
 
 #Arrows i:last-of-type {
 	padding-left: 50px;
-}
-
-#Arrows i:hover {
-	background-color: rgba(28, 29, 33, .75);
-	color: #EEEFF7;
 }

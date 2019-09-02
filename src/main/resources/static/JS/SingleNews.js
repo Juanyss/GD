@@ -73,9 +73,23 @@ $( document ).ready()
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
-            success: function (result) {
-                $("#previewPics"+id).empty();
-                $("#previewPics"+id).append(
+            success: function (result) {               
+                
+                if(result[0].orientation == "P"){  
+        			$("#previewPics"+id).empty();
+                	$("#previewPics"+id).append(
+                    "<img class='img_news2' src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
+                    "<div class='text_span'>" +
+                    "<span>"+categoria+"</span><span>"+fecha+"</span>" +
+                    "</div>" +
+                    "</img>" +
+                    "<div class='text_news'>" +
+                    "<h1>"+titulo+"</h1>" +
+                    "</div>"
+                )
+        		}else{
+        			$("#previewPics"+id).empty();
+                	$("#previewPics"+id).append(
                     "<img class='img_news' src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
                     "<div class='text_span'>" +
                     "<span>"+categoria+"</span><span>"+fecha+"</span>" +
@@ -85,6 +99,7 @@ $( document ).ready()
                     "<h1>"+titulo+"</h1>" +
                     "</div>"
                 )
+                }        		
             }
         })
     }

@@ -10,7 +10,7 @@ $( document ).ready()
             $("#importantNews1").empty();
             $("#importantNews1").append(
             		"<div class='news_slider1 col-xs-12 col-sm-12 col-md-12 col-lg-7' ><a href='/noticias/"+result[0].idNews+"'>" +            		
-            			"<image class='pics' id='picNews"+ result[0].idNews +"'></a>" +
+            			"<image class='picsImportantNew1' id='picNews"+ result[0].idNews +"'></a>" +
             			"<div class='text'>" +
             				"<div class='text_data1 d-flex w-100 justify-content-between'>" +
             					"<h6>"+result[0].category+"</h6><h6>"+result[0].date+"</h6>" +
@@ -124,7 +124,7 @@ $( document ).ready()
 	            $("#NormalNews").append(
 	            		// Normal news 1
 	            		"<div class='important_card1 col-xs-12 col-sm-9 col-md-9 col-lg-4'><a href='/noticias/"+result[0].idNews+"'>" +          		
-	            			"<image class='picsNormalNews' id='picNews"+ result[0].idNews +"'></a>" +
+	            			"<div class='normalPicsContainerPosition1'><image class='picsNormalNews' id='picNews"+ result[0].idNews +"'></div></a>" +
 	            			"<div class='text_card1'>" +
 	            				"<div class='text_data4 d-flex w-100 justify-content-between'>" +
 	            					"<h6>"+result[0].category+"</h6><h6>"+result[0].date+"</h6>" +
@@ -174,9 +174,12 @@ $( document ).ready()
 	            for(x=2;x<22;x++){
 	            $("#NormalNews2").append(	            		
 	    	            		// Normal news 3
-	    	            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'><a href='/noticias/"+result[x].idNews+"'>" +
+	    	            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
+	    	            		"<a href='/noticias/"+result[x].idNews+"'>" +
+	    	            		"<div class='normalPicsContainer'><image class='pics' id='picNews"+ result[x].idNews +"'></div>"+
+	    	            		
 	    	            		"<div class='itext_card3'>" +
-	    	            		"<div class='text_data6 d-flex w-100 justify-content-between align-items-center'>" +
+	    	            		"<div class='text_data6 d-flex w-100 justify-content-between align-items-center'>" +	    	            		
 	    	            		"<h6>"+result[x].category+"</h6><h6>"+result[x].date+"</h6>" +
 	    	            		"</div>" +
 	    	            		"<h1>"+result[x].title+"</h1>" +
@@ -191,6 +194,7 @@ $( document ).ready()
 	    										
 	            );
 	            previewPic(result[0].idNews, result[1].idNews);
+	            previewPicNormalNews(result[x].idNews);
 	            }
 	            $("#NormalNews2").append(
 	            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
@@ -198,6 +202,20 @@ $( document ).ready()
 	    				"</div>"
 	            )}
 	    })
+	    
+	    function previewPicNormalNews(id){
+	    $.ajax({
+	        url: "/api/news/pics/" + id,
+	        contentType: "application/json; charset=utf-8",
+	        method: "GET",
+	        success: function (result) {
+	        	$("#picNews"+id).attr("src","/api/uploadimage/videoTest/" + result[0].idImage);
+	        	if(result[0].orientation == "P"){	        		
+	        		$("#picNews"+id).attr("class","normalNewsPics2P1"); 
+	     		}      
+	        }
+	    })
+	    }
 	    
 	    
 	    

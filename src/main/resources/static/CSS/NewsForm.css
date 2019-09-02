@@ -1,138 +1,124 @@
-body{
-    background-color: cadetblue;
+body {
+	background-color: cadetblue;
 }
 
-br{
-    width: 100%;
+br {
+	width: 100%;
 }
 
 .formBtn {
-    width: 140px;
-    display: inline-block;
-
-    background: antiquewhite;
-    color: black;
-    font-weight: 100;
-    font-size: 1.2em;
-    border: none;
-    height: 50px;
+	width: 140px;
+	display: inline-block;
+	background: antiquewhite;
+	color: black;
+	font-weight: 100;
+	font-size: 1.2em;
+	border: none;
+	height: 50px;
 }
 
-.line{
-    width: 100%;
-    height: 3px;
-    border-bottom: 5px solid black;
-    position: absolute;
+.line {
+	width: 100%;
+	height: 3px;
+	border-bottom: 5px solid black;
+	position: absolute;
 }
 
 .portrait {
-		width: 33%;
-		height: 95%;
-		transition: all 1s;
-		position: absolute;
+	width: 33%;
+	height: 95%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.portraitScuare {
+	width: 55%;
+	height: 95%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+.landscape {
+	width: 100%;
+	height: 100%;
+	transition: all 1s;
+	position: absolute;
+	margin: auto;
+	top: 0;
+	left: 0;
+	right: 0;
+	bottom: 0;
+}
+
+@media all and (max-width: 1199px) {
+	::-webkit-input-placeholder {
+		font-size: 30px;
+	}
+	::-moz-placeholder {
+		font-size: 30px;
+	}
+	:-ms-input-placeholder {
+		font-size: 30px;
+	}
+	::placeholder {
+		font-size: 30px;
+	}
+	body {
+		width: 100%;
+		flex-wrap: wrap;
+		background-color: cadetblue;
+	}
+	input, label {
+		width: 95%;
+		height: 75px;
+		justify-content: center;
+		align-items: center;
+		font-size: 30px;
+	}
+	textarea {
+		width: 95%;
+		height: 200px;
+		justify-content: center;
+		align-items: center;
+		font-size: 23px;
+	}
+	.formBtn {
+		width: 100%;
+		display: inline-block;
+		background: antiquewhite;
+		color: black;
+		font-weight: 100;
+		font-size: 1.2em;
+		border: none;
+		height: 50px;
+	}
+	h2 {
+		width: 100%;
+		text-align: center;
+		font-size: 80px;
+	}
+	select {
+		width: 95%;
+		font-size: 35px;
+	}
+	.divs {
+		width: 100%;
+	}
+	img {
+		display: block;
 		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
 	}
 	.portraitScuare {
-		width: 55%;
-		height: 95%;
-		transition: all 1s;
-		position: absolute;
-		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-	.landscape {
-		width: 100%;
-		height: 100%;
-		transition: all 1s;
-		position: absolute;
-		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-
-
-
-@media all and (max-width: 1199px){
-    ::-webkit-input-placeholder {
-        font-size: 30px;
-    }
-    ::-moz-placeholder {
-        font-size: 30px;
-    }
-    :-ms-input-placeholder {
-        font-size: 30px;
-    }
-    ::placeholder {
-        font-size: 30px;
-    }
-
-    body{
-        width: 100%;
-        flex-wrap: wrap;
-        background-color: cadetblue;
-    }
-
-    input, label{
-        width: 95%;
-        height: 75px;
-        justify-content: center;
-        align-items: center;
-        font-size: 30px;
-
-    }
-
-    textarea{
-        width: 95%;
-        height: 200px;
-        justify-content: center;
-        align-items: center;
-        font-size: 23px;
-    }
-
-    .formBtn {
-        width: 100%;
-        display: inline-block;
-
-        background: antiquewhite;
-        color: black;
-        font-weight: 100;
-        font-size: 1.2em;
-        border: none;
-        height: 50px;
-    }
-
-
-
-    h2{
-        width: 100%;
-        text-align: center;
-        font-size: 80px;
-    }
-
-    select{
-        width: 95%;
-        font-size: 35px;
-    }
-
-    .divs{
-        width: 100%;
-    }
-
-    img{
-        display:block;
-        margin:auto;
-    }
-    
-    .portraitScuare {
 		width: 70%;
 		height: 95%;
 		transition: all 1s;
@@ -143,8 +129,6 @@ br{
 		right: 0;
 		bottom: 0;
 	}
-	
-	
 	.portrait {
 		width: 50%;
 		height: 95%;
@@ -156,8 +140,6 @@ br{
 		right: 0;
 		bottom: 0;
 	}
-	
-	
 	.landscape {
 		width: 100%;
 		height: 100%;
@@ -168,9 +150,50 @@ br{
 		left: 0;
 		right: 0;
 		bottom: 0;
-		
 	}
-
-
+	.imgBtnContainer {
+		position: relative;
+		width: 50%;
+	}
+	.imgBtnContainer .btn {
+		position: absolute;
+		bottom: 0;
+		rigth: 0;
+		transform: translate(-100%, -10%);
+		-ms-transform: translate(-100%, -10%);
+		background-color: #555;
+		color: white;
+		font-size: 16px;
+		padding: 12px 24px;
+		border: none;
+		cursor: pointer;
+		border-radius: 5px;
+	}
+	.imgBtnContainer .btn:hover {
+		background-color: black;
+	}
 }
 
+.imgBtnContainer {
+	position: relative;
+	width: 50%;
+}
+
+.imgBtnContainer .btn {
+	position: absolute;
+	bottom: 0;
+	rigth: 0;
+	transform: translate(-100%, -10%);
+	-ms-transform: translate(-100%, -10%);
+	background-color: #555;
+	color: white;
+	font-size: 16px;
+	padding: 12px 24px;
+	border: none;
+	cursor: pointer;
+	border-radius: 5px;
+}
+
+.imgBtnContainer .btn:hover {
+	background-color: black;
+}

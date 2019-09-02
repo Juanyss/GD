@@ -54,48 +54,48 @@ $( document ).ready()
 					success : function(result) {
 						$("#newsPics")
 						.append("*Para guardar la horientacion de la foto hacer click en la foto y escribir su orientacion (Horizontal, Vertical o Cuadrado)<br>");
+						$("#newsPics").empty();
 						for (x = 0; x < result.length; x++) {
 							if (result[x].type == "image") {
 								// Compare orientation for pictures
-
+								
 								if (result[x].orientation == "P") {
 									$("#newsPics")
 											.append(
-													"<img width='200' heigth='300' id='"
+													"<div class=imgBtnContainer> <img width='200' heigth='300' id='"
 															+ result[x].idImage
 															+ "' src='/api/uploadimage/videoTest/"
 															+ result[x].idImage
 															+ "' onclick='picOrientation("
 															+ result[x].idImage
-															+ ")'><br>"
-															+ "<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
+															+ ")'>"
+															+ "<button class='btn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button></div>"
 
-											);
-									$("#newsLocation").append("portrait");
+											);									
 								} else if (result[x].orientation == "L") {
 									$("#newsPics")
 											.append(
-													"<img width='300' heigth='200' id='"
+													"<div class=imgBtnContainer> <img width='300' heigth='200' id='"
 															+ result[x].idImage
 															+ "' src='/api/uploadimage/videoTest/"
 															+ result[x].idImage
 															+ "' onclick='picOrientation("
 															+ result[x].idImage
-															+ ")'><br>"
-															+"<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"															
+															+ ")'>"
+															+"<button class='btn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button></div>"															
 
 											);
 								} else {
 									$("#newsPics")
 											.append(
-													"<img width='250' heigth='250' id='"
+													"<div class=imgBtnContainer> <img width='250' heigth='250' id='"
 															+ result[x].idImage
 															+ "' src='/api/uploadimage/videoTest/"
 															+ result[x].idImage
 															+ "' onclick='picOrientation("
 															+ result[x].idImage
-															+ ")'><br>"
-															+"<button class='formBtn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button>"
+															+ ")'>"
+															+"<button class='btn' id='summitButton' onclick='removePic(" + id + "," + result[x].idImage + ")'>Quitar foto</button></div>"
 															);
 								}
 
