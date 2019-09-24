@@ -9,6 +9,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.web.multipart.MultipartFile;
 
+
+
 @Service
 public class ImageUploadImp implements ImageUploadService {
 
@@ -17,6 +19,8 @@ public class ImageUploadImp implements ImageUploadService {
 
     @Autowired
     ImageRepository imageRepository;
+    
+   
 
     public ImageUploadImp() {
     }
@@ -25,10 +29,10 @@ public class ImageUploadImp implements ImageUploadService {
     public void saveImage(Long id,MultipartFile imageFile) throws Exception { 
         byte[] bytes = imageFile.getBytes();
         Image i = new Image();
-        i.setBytes(bytes);
-        //System.out.println(orientation);
         
-        //i.setOrientation(orientation);
+        
+        i.setBytes(bytes);
+        
         if(imageFile.getContentType().contains("image")){
             i.setType("image");
         }else if(imageFile.getContentType().contains("video")){

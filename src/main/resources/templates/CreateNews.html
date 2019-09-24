@@ -10,11 +10,12 @@
 
 <div id="NewsForm"></div>
 <h2>Nueva Noticia</h2><br>
+<div class='line'></div><br>
 <input placeholder='Lugar' id='newsLocation' type='text' required /><br>
+<div class='line'></div><br>	
+<input placeholder='Titulo' type='text' id='newsTittle' required /><label class="tips">*Maximo 75 caracteres y solo la primer letra mayuscula</label>
 <div class='line'></div><br>
-<input placeholder='Titulo' type='text' id='newsTittle' required /><br>
-<div class='line'></div><br>
-<input placeholder='Bajada' type='text' id='newsIntro'  /><br>
+<input placeholder='Bajada' type='text' id='newsIntro'  /><label class="tips">*Maximo 200 caracteres</label>
 <div class='line'></div><br>
 <textarea class="textArea" placeholder="Noticia"  type='text' rows="4" cols="50" id='newsNews'></textarea><br>
 <div class='line'></div><br>
@@ -24,9 +25,14 @@
 <select id="newsLevel" placeholder="Importancia">
     <option value="NORMAL">Normal</option>
     <option value="IMPORTANTE">Importante</option>
-</select></h3><br><br><br>
-<button class='formBtn' id="summitButton">Crear</button>
+</select></h3><br>
+<input id="thumbNail" placeholder='Link foto de presentacion'> <button id="addThumbNail">Info</button>
+<br><br><br>
+<button class='formBtn' id="summitButton">Crear</button><label>  </label>
+
 <button class='formBtn' id="cancelButton">Cancelar</button>
+
+<div id="thumbNailInfo"></div>
 
 <script src="JS/CreateNews.js"></script>
 </body>

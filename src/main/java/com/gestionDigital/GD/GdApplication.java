@@ -5,10 +5,7 @@ import org.springframework.boot.autoconfigure.SpringBootApplication;
 import org.springframework.boot.builder.SpringApplicationBuilder;
 import org.springframework.boot.web.servlet.support.SpringBootServletInitializer;
 
-import java.sql.Connection;
-import java.sql.DriverManager;
-import java.sql.PreparedStatement;
-import java.util.Calendar;
+
 
 @SpringBootApplication
 public class GdApplication extends SpringBootServletInitializer {
@@ -19,7 +16,7 @@ public class GdApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(GdApplication.class);
+		return application.sources(GdApplication.class).profiles("dev");
 	}
 
 }

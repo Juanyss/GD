@@ -30,15 +30,15 @@ public class NewsController {
     }
     
     @ApiOperation("Show posted news with status 'Posted'")
-    @GetMapping("/morenews")
-    public List<News> showAllPostedNews() {
-        return this.newsImp.moreNews();
+    @GetMapping("/morenews/{page}")
+    public List<News> showAllPostedNews(@PathVariable("page") int page) {
+        return this.newsImp.moreNews(page);
     }
 
     @ApiOperation("Show all posted and not posted news")
-    @GetMapping("/all")
-    public List<News> showAllNews() {
-        return this.newsImp.findAll();
+    @GetMapping("/all/{page}")
+    public List<News> showAllNews(@PathVariable("page") int page) {
+        return this.newsImp.findAll(page);
     }
 
     @ApiOperation("Show 1 news by ID")
@@ -66,9 +66,8 @@ public class NewsController {
 
     @ApiOperation("Delete a news by ID")
     @DeleteMapping("/{id}")
-    public List<News> deleteNews(@PathVariable("id") Long id) {
-        this.newsImp.deleteNews(id);
-        return this.newsImp.findAll();
+    public void deleteNews(@PathVariable("id") Long id) {
+        this.newsImp.deleteNews(id);        
     }
 
     @ApiOperation("Update a news by ID")

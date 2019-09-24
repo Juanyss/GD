@@ -11,7 +11,7 @@ public interface NewsService {
 
     News newNews(News news);
 
-    List<News> findAll();
+    List<News> findAll(int page);
 
     News findOne(Long id);
 
@@ -27,5 +27,9 @@ public interface NewsService {
 
     List<News> findAllImportantPosted();
 
-	List<News> moreNews();
+	List<News> moreNews(int page);
+
+	
+
+	
 }

@@ -7,6 +7,10 @@ $( document ).ready()
         method: "GET",
         success: function (result) {
         	document.title = "Agencia Digital - " + result.title;
+        	
+        	
+        	
+        	
             $("#newsCategory").empty();
             $("#newsCategory").append(
                 "<span>"+result.category+"</span> <span>"+result.date+"</span>"
@@ -43,7 +47,7 @@ $( document ).ready()
         }
     })
 
-    //Other news
+    // Other news
     $.ajax({
         url: "/api/news/otherNews/" + window.location.href.split('/')[4],
         contentType: "application/json; charset=utf-8",
@@ -73,21 +77,7 @@ $( document ).ready()
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
-            success: function (result) {               
-                
-                if(result[0].orientation == "P"){  
-        			$("#previewPics"+id).empty();
-                	$("#previewPics"+id).append(
-                    "<img class='img_news2' src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
-                    "<div class='text_span'>" +
-                    "<span>"+categoria+"</span><span>"+fecha+"</span>" +
-                    "</div>" +
-                    "</img>" +
-                    "<div class='text_news'>" +
-                    "<h1>"+titulo+"</h1>" +
-                    "</div>"
-                )
-        		}else{
+            success: function (result) {
         			$("#previewPics"+id).empty();
                 	$("#previewPics"+id).append(
                     "<img class='img_news' src='/api/uploadimage/videoTest/" + result[0].idImage + "'>" +
@@ -97,48 +87,12 @@ $( document ).ready()
                     "</img>" +
                     "<div class='text_news'>" +
                     "<h1>"+titulo+"</h1>" +
-                    "</div>"
-                )
-                }        		
+                    "</div>")                       		
             }
         })
     }
 
-    //Weather info
-    $.ajax({
-        url: "https://ws.smn.gob.ar/map_items/weather",
-        contentType: "application/json; charset=utf-8",
-        method: "GET",
-        success: function (result) {
-        	$("#weatherInfo").empty();
-            for(x=0;x<result.length;x++){
-                if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
-                	             	
-                    $("#weatherInfo").append(
-                        "<span>"+ result[x].weather.temp +"°C - </span>"                        
-                    )
-                    
-                    if(result[x].weather.description == "Algo nublado"){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/AlgoNublado.svg'></image>"                        
-                            )
-                	}else if(result[x].weather.description == "Despejado"){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/despejado.png'></image>"                        
-                            )
-                	}else if(result[x].weather.description.includes("Nublado")){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/nublado.png'></image>"                        
-                            )
-                	}else if(result[x].weather.description.includes("lluvia")){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/lluvia.png'></image>"                       
-                            )
-                            }
-                    }
-                }
-        }
-    })
+    
 
 
     function showPics(id) {
@@ -150,29 +104,10 @@ $( document ).ready()
                 $("#Slider").empty();
                 for (x = 0; x < result.length; x++) {
                     if (result[x].type == "image") {    
-                    	//Compare width and height to know if is portrait or landscape
-                    	//if (img.height > img.width) {
-                    		if(result[x].orientation == "P"){  
-                    			$("#Slider").append(
-                    				"<img class='portrait' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
-                    				
-                    			);
-                    		}else if(result[x].orientation == "L"){
-                    			$("#Slider").append(
-                        				"<img class='landscape' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
-                        				
-                        			);
-                    		}else{
-                    			$("#Slider").append(
-                    				"<img class='portraitScuare' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
-                    				
-                    			);                    			
-                    		}
-                    		
-                    		
-                    		
-                    	
-                    	//Hide all the pictures and show only the first
+                    	 $("#Slider").append(
+                    			 "<img class='landscape' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+                    			 );
+                    	// Hide all the pictures and show only the first
                     	$('#Slider').each(function() { 
                     		  var $this= jQuery(this);
                     		  $this.find(':not(img:first)').hide();
@@ -185,8 +120,9 @@ $( document ).ready()
 
 
     }
-    //----------------------------------------------------------
-    // When click on next or preview hide all the pictures and show the first one
+    // ----------------------------------------------------------
+    // When click on next or preview hide all the pictures and show the first
+	// one
     $("#Next").click(function(){
         $("#Slider").append($("#Slider img:first-of-type"));
         $('#Slider').each(function() { 

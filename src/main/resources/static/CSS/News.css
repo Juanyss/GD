@@ -63,7 +63,7 @@ section {
 .important_card3 {
 	border: 2px solid darkgrey;
 	margin: 5px;
-	height: 450px;
+	height:auto;
 	display: flex;
 	align-items: center;
 	padding: 0;
@@ -338,9 +338,8 @@ section {
 
 .itext_card3 {
 	padding: 10px;
-	bottom: 0;
-	position: absolute;
-	height: 50%;
+	bottom: 0;	
+	height: auto;
 }
 
 .itext_card3 h1 {
@@ -396,7 +395,7 @@ section {
 	font-family: "Open Sans", SansSerif;
 }
 
-.social_facebook {
+.update {
 	width: 35px;
 	height: 35px;
 	text-decoration: none;
@@ -404,12 +403,12 @@ section {
 	background-color: transparent;
 	padding: 0;
 	margin-top: 5px;
-	background-image: url("/img/social_facebook_m.png");
+	background-image: url("/img/update.png");
 	background-size: cover;
 	background-position: center;
 }
 
-.social_twitter {
+.modPics {
 	width: 35px;
 	height: 35px;
 	text-decoration: none;
@@ -417,12 +416,12 @@ section {
 	background-color: transparent;
 	padding: 0;
 	margin-top: 5px;
-	background-image: url("/img/social_twitter_m.png");
+	background-image: url("/img/addPics.png");
 	background-size: cover;
 	background-position: center;
 }
 
-.social_whatsapp {
+.delete {
 	width: 35px;
 	height: 35px;
 	text-decoration: none;
@@ -430,7 +429,7 @@ section {
 	background-color: transparent;
 	padding: 0;
 	margin-top: 5px;
-	background-image: url("/img/social_whatsapp_m.png");
+	background-image: url("/img/delete-button.png");
 	background-position: center;
 	background-size: cover;
 }

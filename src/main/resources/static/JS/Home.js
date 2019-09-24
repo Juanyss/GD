@@ -10,12 +10,12 @@ $( document ).ready()
             $("#importantNews1").empty();
             $("#importantNews1").append(
             		"<div class='news_slider1 col-xs-12 col-sm-12 col-md-12 col-lg-7' ><a href='/noticias/"+result[0].idNews+"'>" +            		
-            			"<image class='picsImportantNew1' id='picNews"+ result[0].idNews +"'></a>" +
+            			"<div class='importantPicsContainerPosition1'><image class='picsImportantNew1' id='picNews"+ result[0].idNews +"'></div></a>" +
             			"<div class='text'>" +
             				"<div class='text_data1 d-flex w-100 justify-content-between'>" +
             					"<h6>"+result[0].category+"</h6><h6>"+result[0].date+"</h6>" +
             				"</div>" +
-            				"<h1>"+result[0].title+"</h1>" +
+            				"<h1>"+result[0].title +"</h1>" +
             				"<p>"+result[0].introduction+"</p>" +
             				"<div class='social_card1 d-flex justify-content-end'>" +
             				"<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
@@ -87,13 +87,7 @@ $( document ).ready()
 	        method: "GET",
 	        success: function (result) {
 	        	$("#picNews"+id1).attr("src","/api/uploadimage/videoTest/" + result[0].idImage);
-	        	if(result[0].orientation == "P"){	        		
-	        		$("#picNews"+id1).attr("class","normalNewsPics2P1"); 
-	     		}
-	        	
-	        	
-	        	
-	                      
+	        	         
 	        }
 	    })
 	    
@@ -103,13 +97,7 @@ $( document ).ready()
 	        method: "GET",
 	        success: function (result) {
 	        	$("#picNews"+id2).attr("src","/api/uploadimage/videoTest/" + result[0].idImage);
-	        	if(result[0].orientation == "P"){	        		
-	        		$("#picNews"+id2).attr("class","normalNewsPics2Portrait"); 
-	     		}
-	        	
-	        	
-	        	
-	                      
+	        	          
 	        }
 	    })
 	}
@@ -171,7 +159,7 @@ $( document ).ready()
 	                    "</div>"
 	                    );
 	            $("#NormalNews2").empty();
-	            for(x=2;x<22;x++){
+	            for(x=2;x<result.length;x++){
 	            $("#NormalNews2").append(	            		
 	    	            		// Normal news 3
 	    	            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
@@ -196,11 +184,13 @@ $( document ).ready()
 	            previewPic(result[0].idNews, result[1].idNews);
 	            previewPicNormalNews(result[x].idNews);
 	            }
-	            $("#NormalNews2").append(
-	            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
-	    				"<button onClick='goToMoreNews()' class='moreNews'>Más noticias</button>" +
-	    				"</div>"
-	            )}
+	            if(x == 20){
+	            	$("#NormalNews2").append(
+		            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
+		    				"<button onClick='goToMoreNews()' class='moreNews'>Más noticias</button>" +
+		    				"</div>"
+		            )}
+	            }
 	    })
 	    
 	    function previewPicNormalNews(id){
@@ -222,48 +212,5 @@ $( document ).ready()
 	 function goToMoreNews(){
 		 document.location.href = '/todaslasnoticias';
 	 }
-	    
-	    
-	
-	
-	// Weather info
-    $.ajax({
-        url: "https://ws.smn.gob.ar/map_items/weather",
-        contentType: "application/json; charset=utf-8",
-        method: "GET",
-        success: function (result) {
-        	
-            $("#weatherInfo").empty();
-            for(x=0;x<result.length;x++){
-                if(result[x].name == "Corrientes" && result[x].province == "Corrientes"){
-                	console.log(result[x].weather.description);
-                    $("#weatherInfo").append(
-                        "<span>"+ result[x].weather.temp +"°C - </span>"                        
-                    )
-                    
-                    if(result[x].weather.description.includes("nublado")){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/AlgoNublado.svg'></image>"                        
-                            )
-                	}else if(result[x].weather.description == "Despejado"){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/despejado.png'></image>"                        
-                            )
-                	}else if(result[x].weather.description.includes("Nublado")){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/nublado.png'></image>"                        
-                            )
-                	}else if(result[x].weather.description.includes("lluvia")){
-                		$("#weatherInfo").append(
-                                "<image width='25' height='25' src='/img/lluvia.png'></image>"                       
-                            )
-                            }
-                    }
-                }
-            }
-    })
-    
-    
-    
     
 }

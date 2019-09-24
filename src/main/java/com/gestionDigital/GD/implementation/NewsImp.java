@@ -5,6 +5,7 @@ import com.gestionDigital.GD.model.Image;
 import com.gestionDigital.GD.model.News;
 import com.gestionDigital.GD.repository.NewsRepository;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.data.domain.PageRequest;
 import org.springframework.stereotype.Service;
 
 
@@ -23,12 +24,12 @@ public class NewsImp implements NewsService {
 
     @Override
     public List<News> findAllPosted() {
-        return this.newsRepository.showAllPosted();
+        return this.newsRepository.showAllPosted(PageRequest.of(0, 20));
     }
 
     @Override
-    public List<News> findAll() {
-        return (List<News>) this.newsRepository.showAll();
+    public List<News> findAll(int page) {
+        return (List<News>) this.newsRepository.showAll(PageRequest.of(page, 21));
     }
 
     @Override
@@ -79,6 +80,7 @@ public class NewsImp implements NewsService {
         n.setIntroduction(news.getIntroduction());
         n.setNews(news.getNews());
         n.setCategory(news.getCategory());
+        n.setThumbNail(news.getThumbNail());
         n.setPosted(news.getPosted());
         n.setLevel(news.getLevel());
         this.newsRepository.save(n);
@@ -91,11 +93,11 @@ public class NewsImp implements NewsService {
 
     @Override
     public List<News> findAllImportantPosted() {
-        return this.newsRepository.showAllImportantPosted();
+        return this.newsRepository.showAllImportantPosted(PageRequest.of(0, 3));
     }
     
     @Override
-	public List<News> moreNews() {		
-    	return this.newsRepository.showAllImportantAndNormalNewsPosted();
+	public List<News> moreNews(int page) {		
+    	return this.newsRepository.showAllImportantAndNormalNewsPosted(PageRequest.of(page, 9));
 	}
 }

@@ -2,15 +2,46 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
-    <title>Noticias</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
+    <title>Agencia Digital</title>    
     <script	src="/JS/jquery-3.3.1.min.js"></script>
-    <link rel="stylesheet" type="text/css" href="CSS/Home.css"/>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link rel="stylesheet" href="/CSS/News.css">
+    <link rel="stylesheet" href="/CSS/basic.css">
+    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">
 </head>
 <body>
+<header>
+    <nav class="navbar col-xs-12 col-sm-12 col-md-12 col-lg-12">
+        <div class="navbar_container container-fluid">
+            <a class="navbar-brand text-center" href="/">AGENCIA DIGITAL</a>
+            <div class="weather" id="weatherInfo"></div>
+        </div>
+    </nav>
+</header>
+<section>
+    <div class="important_news">
+        <div class="row">
+            <div class="important_news1 col-lg-12">
+                <div class="tittle col-lg-12 col-sm-12 col-md-12 col-xs-12"><br><br><br>
+                    <h1>SECTOR DE MODIFICACION</h1>
+                    <button onclick="window.location.href='/nuevanoticia'">Nueva noticia</button>
+                </div>
+                <div class="row" id='news'>
+                    
+                </div>
+                <div id='buttonContainer' class='center'>
+                	<button id="prev" hidden>Anterior</button>
+                	<button id="next">Siguiente</button>
+                </div>
+                
+            </div>
+        </div>
+    </div>
 
-<div id="test"></div>
-
+</section>
 
 <script src="/JS/News.js"></script>
+<script src="/JS/Weather.js"></script>
 </body>
 </html>

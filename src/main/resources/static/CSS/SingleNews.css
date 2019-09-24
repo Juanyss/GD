@@ -638,6 +638,19 @@ a:active {
 }
 
 @media all and (max-width: 599px) {
+	.tittle_news h1 {
+	font-family: 'Lora', serif;
+	font-size: 2.2rem;
+	font-weight: bold;
+	line-height: 1;
+	text-align: left;
+	width: 100%;
+	white-space: pre-line;
+	overflow-wrap: break-word;
+	hyphens: auto
+}
+	
+	
 	.navbar_container {
 		display: flex !important;
 		justify-content: center !important;
@@ -724,7 +737,7 @@ a:active {
 	}
 	.landscape {
 		width: 100%;
-		height: 100%;
+		height: auto;
 		transition: all 1s;
 		position: absolute;
 		margin: auto;
@@ -752,6 +765,10 @@ a:active {
 		height: 100%;
 		padding: 15px;
 		transition: background-color .5s, color .5s;
+	}
+	
+	#otherNews{
+	padding-top:20px
 	}
 }
 
@@ -813,7 +830,7 @@ a:active {
 		padding-left: 12.5%;
 	}
 	.img_news {
-		height: 200px;
+		height: auto;
 	}
 	
 	.img_news2 {		
@@ -846,7 +863,7 @@ a:active {
 		margin: auto;
 	}
 	.img_news {
-		height: 200px;
+		height: auto;
 	}
 	.videos {
 		width: 100%;
@@ -879,31 +896,10 @@ a:active {
 		align-items: center;
 		justify-content: center;
 	}
-	.portrait {
-		width: 33%;
-		height: 95%;
-		transition: all 1s;
-		position: absolute;
-		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
-	.portraitScuare {
-		width: 55%;
-		height: 95%;
-		transition: all 1s;
-		position: absolute;
-		margin: auto;
-		top: 0;
-		left: 0;
-		right: 0;
-		bottom: 0;
-	}
+	
 	.landscape {
 		width: 100%;
-		height: 100%;
+		height: auto;
 		transition: all 1s;
 		position: absolute;
 		margin: auto;
@@ -948,7 +944,7 @@ a:active {
 }
 
 .img_news {
-	height: 200px;
+	height: auto;
 }
 
 #otherNews {
@@ -981,7 +977,7 @@ a:active {
 }
 
 .img_news {
-	height: 200px;
+	height: auto;
 }
 
 .img_news2 {		
@@ -1028,33 +1024,10 @@ a:active {
 	justify-content: center;
 }
 
-.portrait {
-	width: 33%;
-	height: 95%;
-	transition: all 1s;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
-
-.portraitScuare {
-	width: 55%;
-	height: 95%;
-	transition: all 1s;
-	position: absolute;
-	margin: auto;
-	top: 0;
-	left: 0;
-	right: 0;
-	bottom: 0;
-}
 
 .landscape {
-	width: 100%;
-	height: 100%;
+	width: 85%;
+	height: auto;
 	transition: all 1s;
 	position: absolute;
 	margin: auto;

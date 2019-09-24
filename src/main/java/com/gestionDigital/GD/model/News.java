@@ -39,19 +39,23 @@ public class News {
     private List<Image> imagesList;
 
     private String date;
+    
+    private String thumbNail;
 
 
     public News() {
     }
 
-    public News(String location, String title, String introduction, String news, String category, Level level) {
+    public News(String location, String title, String introduction, String news, String category,String thumbNail, Level level) {
         this.location = location;
         this.title = title;
         this.introduction = introduction;
         this.news = news;
         this.category = category;
+        this.thumbNail = thumbNail;
         this.level = level;
         this.imagesList = new ArrayList<>();
+        
     }
 
     public String getLocation() {
@@ -119,8 +123,18 @@ public class News {
     public void setDate(String date) {
         this.date = date;
     }
+    
+    
 
-    public String getPosted() {
+    public String getThumbNail() {
+		return thumbNail;
+	}
+
+	public void setThumbNail(String thumbNail) {
+		this.thumbNail = thumbNail;
+	}
+
+	public String getPosted() {
         return posted;
     }
 
@@ -142,19 +156,12 @@ public class News {
         this.level = level;
     }
 
-    @Override
-    public String toString() {
-        return "News{" +
-                "idNews=" + idNews +
-                ", location='" + location + '\'' +
-                ", title='" + title + '\'' +
-                ", introduction='" + introduction + '\'' +
-                ", news='" + news + '\'' +
-                ", category='" + category + '\'' +
-                ", level='" + level + '\'' +
-                ", posted='" + posted + '\'' +
-                ", imagesList=" + imagesList +
-                ", date='" + date + '\'' +
-                '}';
-    }
+	@Override
+	public String toString() {
+		return "News [idNews=" + idNews + ", location=" + location + ", title=" + title + ", introduction="
+				+ introduction + ", news=" + news + ", category=" + category + ", level=" + level + ", posted=" + posted
+				+ ", imagesList=" + imagesList + ", date=" + date + ", thumbNail=" + thumbNail + "]";
+	}
+
+    
 }

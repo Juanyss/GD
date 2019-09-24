@@ -1,17 +1,20 @@
 package com.gestionDigital.GD.webController;
 
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.access.prepost.PreAuthorize;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
+import org.springframework.web.servlet.ModelAndView;
+import com.gestionDigital.GD.implementation.NewsImp;
+import com.gestionDigital.GD.model.News;
 
 @Controller
 public class NewsWebController {
-
-    /*@GetMapping(value = "/")
-    public String underConstruction() {
-        return "index";
-    }*/
+	
+	@Autowired
+	private NewsImp newsImp;
+    
     
     //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/")
@@ -28,7 +31,7 @@ public class NewsWebController {
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/nuevanoticia")
     public String newNews() {
-        return "NewNews";
+        return "CreateNews";
     }
 
 
@@ -41,7 +44,7 @@ public class NewsWebController {
     @PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/updatepics/{id}")
     public String updatePics(@PathVariable("id") Long id) {
-        return "updatePics";
+        return "UpdatePics";
     }
 
 
@@ -50,17 +53,22 @@ public class NewsWebController {
     public String AllNews() {
         return "News";
     }
-
-    //@PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/noticias")
-    public String News() {
-        return "News";
-    }
+    
 
     //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/noticias/{id}")
-    public String SingleNews(@PathVariable("id") Long id) {
-        return "Noticia";
+    public ModelAndView  SingleNews(@PathVariable("id") Long id) {
+    	News n = this.newsImp.findOne(id);
+    	
+    	
+    	ModelAndView modelView = new ModelAndView("Noticia");
+    	modelView.addObject("pic", n.getThumbNail());
+    	modelView.addObject("title", n.getTitle());
+    	modelView.addObject("intro", n.getIntroduction());
+    	
+    	
+    	
+    	return modelView;
     }
 
 
