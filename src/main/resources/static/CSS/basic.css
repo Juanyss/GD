@@ -132,6 +132,11 @@ a:active {
 	justify-content: center;
 }
 
+.headerLogo{
+	width: 160px;
+	height: 40px;	
+}
+
 @media all and (max-width: 599px) {
 	.navbar_container {
 		display: flex !important;

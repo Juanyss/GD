@@ -29,27 +29,27 @@ public class NewsWebController {
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/nuevanoticia")
+    @GetMapping(value = "/secured/nuevanoticia")
     public String newNews() {
         return "CreateNews";
     }
 
 
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/uploadpics/{id}")
+    @GetMapping(value = "/secured/uploadpics/{id}")
     public String uploadPics(@PathVariable("id") Long id) {
         return "uploadPics";
     }
 
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/updatepics/{id}")
+    @GetMapping(value = "/secured/updatepics/{id}")
     public String updatePics(@PathVariable("id") Long id) {
         return "UpdatePics";
     }
 
 
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/todas")
+    @GetMapping(value = "/secured/todas")
     public String AllNews() {
         return "News";
     }
@@ -73,7 +73,7 @@ public class NewsWebController {
 
 
     @PreAuthorize("hasAnyRole('ADMIN')")
-    @GetMapping(value = "/noticias/modificar/{id}")
+    @GetMapping(value = "/secured/noticias/modificar/{id}")
     public String UpdateNews(@PathVariable("id") Long id) {
         return "UpdateNews";
     }

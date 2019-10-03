@@ -41,7 +41,7 @@ $( document ).ready()
             );
             $("#shareTwitter").empty();
             $("#shareTwitter").append(
-            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result.idNews+"&text="+result.title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><div class='social_icon' id='twitter'></div></a>"
+            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result.idNews+"&text="+result.title+" -&hashtags=AgenciaDigital,LaVerdad,MarcandoAgenda'><div class='social_icon' id='twitter'></div></a>"
             );
             showPics(result.idNews);
         }
@@ -91,30 +91,32 @@ $( document ).ready()
             }
         })
     }
-
     
 
-
+    
     function showPics(id) {
         $.ajax({
             url: "/api/news/pics/" + id,
             contentType: "application/json; charset=utf-8",
             method: "GET",
-            success: function (result) {
-                $("#Slider").empty();
-                for (x = 0; x < result.length; x++) {
-                    if (result[x].type == "image") {    
-                    	 $("#Slider").append(
-                    			 "<img class='landscape' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"
+            success: function (result) {   
+            	$("#Slider").empty();
+                for (x = 0; x < result.length; x++) {                    
+                	if (result[x].type == "image") {    
+                    	 $("#Slider").append(                    			 
+                    			 "<img class='landscape' src='/api/uploadimage/videoTest/" + result[x].idImage + "'>"                     			 
                     			 );
                     	// Hide all the pictures and show only the first
                     	$('#Slider').each(function() { 
                     		  var $this= jQuery(this);
-                    		  $this.find(':not(img:first)').hide();
-
-                    		}); 
+                    		  $this.find(':not(img:first)').hide();                    		  
+                    		});
                     } 
                 }
+                if (result.length == 1) {
+                  	 $("#Arrows").hide();                  		
+                  }
+                
             }
         })
 
@@ -130,7 +132,8 @@ $( document ).ready()
   		  $this.find(':not(img:first)').hide();
   		  $this.find('img:first').show();
 
-  		}); 
+  		});
+        
     });
 
     $("#Prev").click(function(){
@@ -139,7 +142,8 @@ $( document ).ready()
   		  var $this= jQuery(this);
   		  $this.find(':not(img:first)').hide();
   		  $this.find('img:first').show();
-  		}); 
+  		});        
+        
     });    
 
 }

@@ -5,6 +5,11 @@
 	margin-top: 60px;
 }
 
+.headerLogo{
+	width: 160px;
+	height: 40px;	
+}
+
 section {
 	min-height: 100%;
 }

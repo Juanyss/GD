@@ -16,7 +16,7 @@ public class GdApplication extends SpringBootServletInitializer {
 
 	@Override
 	protected SpringApplicationBuilder configure(SpringApplicationBuilder application) {
-		return application.sources(GdApplication.class).profiles("dev");
+		return application.sources(GdApplication.class);
 	}
 
 }

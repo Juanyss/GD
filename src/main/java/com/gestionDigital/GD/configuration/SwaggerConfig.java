@@ -19,7 +19,7 @@ import static springfox.documentation.builders.PathSelectors.regex;
 @Profile("dev")
 public class SwaggerConfig {
     @Bean
-    public Docket GestionDigital(){
+    public Docket AgenciaDigital(){
         return new Docket(DocumentationType.SWAGGER_2)
                 .select()
                 .apis(RequestHandlerSelectors.basePackage("com.gestionDigital.GD"))
@@ -32,7 +32,7 @@ public class SwaggerConfig {
 
     private ApiInfo metaInfo() {
         return new ApiInfoBuilder()
-                .title("Gestion Digital")
+                .title("Agencia Digital")
                 .description("Online news portal")
                 .version("1.0")
                 .contact(new Contact("Juany", "https://github.com/Juanyss", "Juanyss88@gmail.com"))
