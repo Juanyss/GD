@@ -41,7 +41,7 @@ $( document ).ready()
             );
             $("#shareTwitter").empty();
             $("#shareTwitter").append(
-            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result.idNews+"&text="+result.title+" -&hashtags=AgenciaDigital,LaVerdad,MarcandoAgenda'><div class='social_icon' id='twitter'></div></a>"
+            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result.idNews+"&text="+result.title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><div class='social_icon' id='twitter'></div></a>"
             );
             showPics(result.idNews);
         }

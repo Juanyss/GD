@@ -19,7 +19,7 @@ $( document ).ready()
             				"<p>"+result[0].introduction+"</p>" +
             				"<div class='social_card1 d-flex justify-content-end'>" +
             				"<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-            				"<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"&text="+result[0].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+            				"<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"&text="+result[0].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
             				"<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
             			"</div>" +
                     "</div>" +
@@ -39,7 +39,7 @@ $( document ).ready()
                     "<p>"+result[1].introduction+"</p></a>" +
                     "<div class='social_card1 d-flex justify-content-end'>" +
                     "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-                    "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"&text="+result[1].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+                    "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"&text="+result[1].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
                     "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
                     "</div>" +
                     "</div>" +
@@ -56,7 +56,7 @@ $( document ).ready()
                     "<p>"+result[2].introduction+"</p></a>" +
                     "<div class='social_card1 d-flex justify-content-end'>" +
                     "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-                    "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"&text="+result[2].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+                    "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"&text="+result[2].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
                     "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
                     "</div>" +
                     "</div>" +
@@ -121,7 +121,7 @@ $( document ).ready()
 	            				"<p>"+result[0].introduction+"</p>" +
 	            				"<div class='social_card1 d-flex justify-content-end'>" +
 	                            "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-	                            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"&text="+result[0].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+	                            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"&text="+result[0].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
 	                            "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
 	                            "</div>" +
 	            			"</div>" +
@@ -143,7 +143,7 @@ $( document ).ready()
 	                    					"<p>"+result[1].introduction+"</p>" +
 	                    					"<div class='social_card1 d-flex justify-content-end'>" +
 	                                        "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-	                                        "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"&text="+result[1].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+	                                        "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"&text="+result[1].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
 	                                        "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
 	                                        "</div>" +
 	                    				"</div>" +
@@ -174,7 +174,7 @@ $( document ).ready()
 	        					"<p>"+result[x].introduction+"</p></a>" +
 	        					"<div class='social_card1 d-flex justify-content-end'>" +
 	                            "<a href='https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/"+result[x].idNews+"' target='_blank'><button class='social_facebook'></button></a>" +                    
-	                            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[x].idNews+"&text="+result[x].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad'><button class='social_twitter'></button></a>" +     
+	                            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[x].idNews+"&text="+result[x].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +     
 	                            "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[x].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
 	                            "</div>" +
 	    						"</div>" +
