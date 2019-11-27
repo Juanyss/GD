@@ -186,7 +186,7 @@ $( document ).ready()
 	            }
 	            if(x == 20){
 	            	$("#NormalNews2").append(
-		            		"<div class='important_card3 col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
+		            		"<div class='important_cardMoreNews' col-xs-9 col-sm-9 col-md-3 col-lg-3'>" +
 		    				"<button onClick='goToMoreNews()' class='moreNews'>Más noticias</button>" +
 		    				"</div>"
 		            )}

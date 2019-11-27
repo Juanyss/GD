@@ -19,7 +19,7 @@ public class NewsWebController {
     //@PreAuthorize("hasAnyRole('ADMIN')")
     @GetMapping(value = "/")
     public String home() {
-        return "home";
+        return "homeNew";
     }
     
     //@PreAuthorize("hasAnyRole('ADMIN')")

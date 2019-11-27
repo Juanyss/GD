@@ -70,6 +70,17 @@ section {
 	position: relative;
 }
 
+.important_cardMoreNews {
+	border: 2px solid darkgrey;
+	margin-top: 5px;
+	height: auto;
+	display: flex;
+	align-items: center;
+	padding: 0;
+	position: absolute;
+	bottom: 0;
+}
+
 .important_card4 {
 	border: 2px solid darkgrey;
 	margin: 5px;
@@ -340,7 +351,8 @@ section {
 	padding: 10px;
 	bottom: 0;
 	position: absolute;
-	height: 50%;
+	height: auto;
+	background-color: white;
 }
 
 .itext_card3 h1 {

@@ -1,0 +1,591 @@
+.tittle {
+    margin-bottom: 20px;
+}
+
+.tittle h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 2rem;
+    font-weight: bold;
+    margin-top: 20px;
+    border-bottom: 1px solid red;
+    margin-bottom: 0;
+    color: white;
+}
+
+.card {
+    width: 260px;
+    height: 450px;
+    position: relative;
+    padding: 5px;
+    box-sizing: border-box;
+    display: flex;
+    flex-direction: column;
+    margin: 2px;
+    border: 2px solid lightgray;
+}
+
+.cardImage {
+    width: 100%;
+    height: 200px;
+    background-color: gold;
+}
+
+
+.masNoticias {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: flex-start;
+    padding: 20px 20px 20px 120px;
+}
+
+
+.cardSubText {
+    width: 100%;
+    height: 50px;
+    margin-top: 2px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding: 10px;
+    color: dimgrey;
+}
+
+.cardSubText h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardText {
+    width: 100%;
+    min-height: 100px;
+    margin-top: 3px;
+    margin-bottom: 3px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.cardText h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardSocial {
+    background-color: lightgray;
+    width: 248px;
+    height: 40px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin-top: 2px;
+    padding-bottom: 5px;
+}
+
+.social_facebook {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("/img/social_facebook_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social_twitter {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("/img/social_twitter_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social_whatsapp {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("/img/social_whatsapp_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.bannerHorizontal {
+    width: 2216px;
+    height: 200px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    background-image: url("/img/bannernvo-02.png");
+    background-position: center;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bannerVertical {
+    background-image: url("/img/bannersnvo-04.png");
+    background-position: bottom;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bannerVertical2 {
+    background-image: url("/img/bannernvo-06.png");
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+/*------------------------------------------------*/
+.cardImp {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+}
+
+.cardDecoration {
+    border-left: 3px solid red;
+    padding: 5px;
+}
+
+.cardImpImage {
+    width: 100%;
+    height: 400px;
+    background-color: crimson;
+}
+/*--------------------------------------*/
+.cardImpSub {
+    width: 100%;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.cardImpSub h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+
+.cardImpText {
+    width: 100%;
+    min-height: 150px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    padding: 12px;
+
+}
+
+.cardImpText h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+}
+
+/*---------------------------------------*/
+
+.cardImpSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    width: 98%;
+}
+
+/*------------------------------------------------*/
+.cardImp3 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    box-sizing: border-box;
+    border: 2px solid dimgrey;
+}
+
+.cardImp3Sub {
+    width: 100%;
+    height: 40px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px;
+}
+
+.cardImp3Sub h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+.cardImp3Text {
+    width: 100%;
+    min-height: 170px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.cardImp3Text h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardImp3Social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 99%;
+}
+
+/*------------------------------------------------*/
+
+.cardImp2 {
+    position: relative;
+    display: flex;
+    flex-direction: column;
+    padding: 2px;
+    box-sizing: border-box;
+    height: 500px;
+}
+
+.cardImp2Image {
+    width: 100%;
+    height:280px;
+    background-color: crimson;
+}
+
+/*------------------------------------------------*/
+
+.cardImp2Sub {
+    width: 100%;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.cardImp2Sub h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+.cardImp2Text {
+    width: 100%;
+    min-height: 150px;
+    margin-top: 5px;
+    margin-bottom: 20px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 12px;
+}
+
+.cardImp2Text h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/*------------------------------------------------*/
+
+.cardImp2Social {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    width: 99%;
+}
+
+/*------------------------------------------------*/
+
+.cardNoticias{
+    padding: 2px;
+    border: 2px solid red;
+    background-color: lightgray;
+    position: relative;
+}
+
+.cardNoticiasImg {
+    height: 230px;
+    background-color: crimson;
+    width: 100%;
+}
+
+/*------------------------------------------------*/
+
+.cardNoticiasSub {
+    width: 100%;
+    height: 40px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.cardNoticiasSub h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+
+.cardNoticiasText {
+    width: 100%;
+    height: 150px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.cardNoticiasText h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+/*------------------------------------------------*/
+
+.cardNoticiasSocial {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 94%;
+    padding: 5px;
+    margin-bottom: 5px;
+}
+
+/*------------------------------------------------*/
+
+.cardNoticias2 {
+    padding: 2px;
+    border: 2px solid dimgrey;
+    background-color: white;
+    position: relative;
+}
+
+.cardNoticiasImg2 {
+    height: 230px;
+    background-color: crimson;
+    width: 100%;
+}
+
+
+/*------------------------------------------------*/
+
+
+.cardNoticiasSub2 {
+    width: 100%;
+    height: 40px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: baseline;
+    padding: 10px;
+}
+
+.cardNoticiasSub2 h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+.cardNoticiasText2 {
+    width: 100%;
+    height: 150px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    padding: 10px;
+    text-align: center;
+}
+
+.cardNoticiasText2 h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+}
+
+.cardNoticiasSocial2 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 94%;
+    padding: 5px;
+    margin-bottom: 5px;
+
+}
+
+/*------------------------------------------------*/
+
+.cardNoticias3 {
+    margin-top: 20px;
+    position: relative;
+    padding: 3px;
+    border: 2px solid dimgrey;
+    background-color: white;
+}
+
+.cardNoticiasImg3 {
+    height: 250px;
+    background-color: crimson;
+    width: 100%;
+    margin-top: 10px;
+}
+
+
+.cardNoticiasSub3 {
+    width: 100%;
+    height: 40px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+    padding-right: 5px;
+    padding-left: 5px !important;
+}
+
+.cardNoticiasSub3 h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+.cardNoticiasText3 {
+    width: 100%;
+    height: 200px;
+    margin-top: 5px;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.8rem;
+    padding: 10px;
+}
+
+.cardNoticiasText3 h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1.4rem;
+    font-weight: bold;
+}
+
+
+.cardNoticiasSocial3 {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-end;
+    align-items: center;
+    position: absolute;
+    bottom: 0;
+    height: 40px;
+    width: 98%;
+    margin-bottom: 5px;
+}
+
+/*------------------------------------------------*/
+
+.btn {
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    margin: 15px;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1rem;
+    font-weight: bold;
+    color: red;
+}
+
+#masNoticias {
+    background-color: red;
+    color: white;
+}
+
+.paginacion {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    margin: 10px;
+
+}

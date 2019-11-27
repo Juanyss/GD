@@ -1,0 +1,27 @@
+.container-fluid {
+    box-shadow: -1px 5px 10px 2px rgba(0,0,0,0.30);
+    -webkit-box-shadow: -1px 5px 10px 2px rgba(0,0,0,0.30);
+    box-shadow: -1px 5px 10px 2px rgba(0,0,0,0.30);
+}
+
+.navbarContainer {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    padding: 10px;
+}
+
+.marca {
+    background-image: url("/img/agencia_digital-01.png");
+    height: 60px;
+    width:200px;
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+}
+
+.weather {
+    background-color: gold;
+    height: 60px;
+    width:200px;
+}
