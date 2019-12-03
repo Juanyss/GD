@@ -21,7 +21,8 @@
 }
 
 .weather {
-    background-color: gold;
     height: 60px;
     width:200px;
+    text-align: center;
+    padding: inherit;
 }
