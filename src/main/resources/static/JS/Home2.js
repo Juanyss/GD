@@ -227,7 +227,7 @@ $( document ).ready()
 	        contentType: "application/json; charset=utf-8",
 	        method: "GET",
 	        success: function (result) {
-	        	$("#importantNews1").empty();
+	        	//important News1
 	            $("#importantNews1").append(
 	            		'<div class="cardImpImage"><image class="picsImportantNew1" id="picNews'+ result[0].idNews +'"></div>'+
                         '<div class="cardImpSub">'+
@@ -241,9 +241,42 @@ $( document ).ready()
                         '</div>'+
                         '<div class="cardImpSocial">'+
                             '<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/'+result[0].idNews+'"<button class="social_facebook"></button></a>'+
-                            '<button class="social_twitter"></button>'+
-                            '<button class="social_whatsapp"></button>'+
+                            "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"&text="+result[0].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +
+                            "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[0].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
                         '</div>'+
+                        '</div>'
+	            )
+	            //important news 2
+	            $("#importantNews2").append(
+	            		'<div class="cardImp2Image"><image class="picsImportantNew1" id="picNews'+ result[1].idNews +'"></div>'+
+                        '<div class="cardImp2Sub">'+
+                            '<h1>'+result[1].category+'</h1>'+
+                            '<h1>'+result[1].date+'</h1>'+
+                        '</div>'+
+                        '<div class="cardImp2Text">'+
+                            '<h1>'+result[1].title +'</h1>'+
+                            '<p>'+result[1].introduction +'</p>'+
+                        '</div>'+
+                        '<div class="cardImp2Social">'+
+                        '<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/'+result[1].idNews+'"<button class="social_facebook"></button></a>'+
+                        "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"&text="+result[1].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +
+                        "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[1].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
+                        '</div>'
+	            )
+	            //important news 3
+	             $("#importantNews3").append(	            		
+                        '<div class="cardImp3Sub">'+
+                            '<h1>'+result[2].category+'</h1>'+
+                            '<h1>'+result[2].date+'</h1>'+
+                        '</div>'+
+                        '<div class="cardImp3Text">'+
+                            '<h1>'+result[2].title +'</h1>'+
+                            '<p>'+result[1].introduction +'</p>'+
+                        '</div>'+
+                        '<div class="cardImp3Social">'+
+                        '<a href="https://www.facebook.com/sharer/sharer.php?u=http://www.agenciadigital1.net/noticias/'+result[2].idNews+'"<button class="social_facebook"></button></a>'+
+                        "<a href='http://www.twitter.com/intent/tweet?url=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"&text="+result[2].title+" -&hashtags=AgenciaDigital1,LaVerdad,Actualidad,MarcandoAgenda'><button class='social_twitter'></button></a>" +
+                        "<a href='https://api.whatsapp.com/send?text=http://www.agenciadigital1.net/noticias/"+result[2].idNews+"' title='Comparte esta noticia'><button class='social_whatsapp'></button></a>" +
                         '</div>'
 	            )
 	            previewPic(result[0].idNews, result[1].idNews);
