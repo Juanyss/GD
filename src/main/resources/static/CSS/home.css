@@ -13,30 +13,27 @@
 }
 
 .card {
-    width: 260px;
-    height: 450px;
+    width: 360px;
     position: relative;
     padding: 5px;
     box-sizing: border-box;
     display: flex;
     flex-direction: column;
-    margin: 2px;
+    margin: 5px auto;
     border: 2px solid lightgray;
 }
 
 .cardImage {
     width: 100%;
-    height: 200px;
-    background-color: gold;
+    height: 200px;   
 }
 
 
 .masNoticias {
     display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-start;
-    padding: 20px 20px 20px 120px;
+	flex-direction: row;
+	flex-wrap: wrap;
+	justify-content: flex-start;
 }
 
 
@@ -137,6 +134,7 @@
 }
 
 .bannerVertical {
+    margin-top: 20px;
     background-image: url("/img/bannersnvo-04.png");
     background-position: bottom;
     background-size: contain;
@@ -144,10 +142,22 @@
 }
 
 .bannerVertical2 {
+    margin-top: 10px;
     background-image: url("/img/bannernvo-06.png");
     background-position: top;
     background-size: contain;
     background-repeat: no-repeat;
+}
+
+/*------------------------------------------------*/
+
+.cardContainer {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-content: space-around;
+    padding-top: 20px;
 }
 
 /*------------------------------------------------*/
@@ -286,7 +296,6 @@
     flex-direction: column;
     padding: 2px;
     box-sizing: border-box;
-    height: 500px;
 }
 
 .cardImp2Image {
@@ -326,7 +335,7 @@
     overflow-wrap: break-word;
     hyphens: auto;
     font-family: 'Lato', sans-serif;
-    font-size: 0.9rem;
+    font-size: 1rem;
     padding: 12px;
 }
 
@@ -590,9 +599,13 @@
 
 }
 
+a:link{
+	text-decoration: none;
+	color: black;	
+}
 
-
-.picsImportantNew1{
-	width: inherit;
-	height: inherit;
+.picsImportantNew1 {	
+	width: 100%;
+	height: 100%;
+	top: 0;
 }

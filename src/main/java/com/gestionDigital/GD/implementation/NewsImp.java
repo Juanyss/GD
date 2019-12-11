@@ -24,7 +24,7 @@ public class NewsImp implements NewsService {
 
     @Override
     public List<News> findAllPosted() {
-        return this.newsRepository.showAllPosted(PageRequest.of(0, 20));
+        return this.newsRepository.showAllPosted(PageRequest.of(0, 21));
     }
 
     @Override

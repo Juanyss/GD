@@ -1,71 +1,125 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 <head>
     <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">        
-    <title>Agencia Digital</title>    
-    <script	src="/JS/jquery-3.3.1.min.js"></script>
+    <title>Agencia Digital</title>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <meta property="og:image" itemprop="image" content="/img/agenciaDigitalIcon.png">
     <link rel="icon" href="/img/agenciaDigitalIcon.png">
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css?family=Fira+Sans+Condensed|Lato&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+    <link rel="stylesheet" href="/CSS/header.css">
+    <link rel="stylesheet" href="/CSS/footer.css">
     <link rel="stylesheet" href="/CSS/home.css">
-    <link rel="stylesheet" href="/CSS/basic.css">
-    <link href="https://fonts.googleapis.com/css?family=Lora|Open+Sans&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="/CSS/responsiveHome.css">
+    <script	src="/JS/jquery-3.3.1.min.js"></script>
 </head>
 <body>
 <header>
-    <nav class="navbar col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="navbar_container container-fluid">
-            <a class="navbar-brand text-center"><img class="headerLogo" src="/img/agencia_digital-01.png"></a>
+    <nav class="container-fluid" style="background-color: lightgray; height: 90px; padding-top: 10px; margin: 0 !important;">
+        <div class="navbarContainer col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 ">
+            <a href="home.html"><div class="marca">
+            </div></a>
             <div class="weather" id="weatherInfo"></div>
         </div>
     </nav>
 </header>
 <section>
-<div class="news container-fluid col-xs-12 col-sm-12 col-md-12 col-lg-12">
-    <div class="slider_news col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="tittle col-lg-12 col-sm-12 col-md-12 col-xs-12" id="important_news">
-        <h1>NOTICIAS IMPORTANTES</h1>
-    </div>
-        <div class="news_slider col-xs-12 col-sm-10 offset-sm-1 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
-
-        <div class="row" id='importantNews1'>
-            
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1 ">
+            <div class="row">
+            <div class="noticia1 col-xs-12 col-sm-12 col-md-12 col-lg-7">
+                <div class="noticia2 col-xs-12 col-sm-12 col-md-12 col-lg-12" style=" background-color: lightgray; padding: 5px; margin-top: 20px; margin-bottom: 30px; ">
+                    <div class="cardImp" id="importantNews1">
+                        
+                    </div>
+                </div>
+            </div>
+            <div class="noticia2 col-xs-12 col-sm-12 col-md-12 col-lg-5" style="height: auto;">
+                <div class="noticia2 col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 5px; margin-top: 20px; margin-bottom: 10px; border: 2px solid dimgray">
+                    <div class="cardImp2" id="importantNews2">
+                        
+                    </div>
+                </div>
+                <div class="noticia2 col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding: 2px;">
+                    <div class="cardImp3" id="importantNews3">
+                        
+                    </div>
+                </div>
+            </div>
             </div>
         </div>
+    </div>
+    <div class="row">
+    <div class="bannerHorizontal col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1"></div>
+</div>
+    <div style="background-color: black; padding-bottom: 20px;">
+    <div class="row">
+        <div class="tittle col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+            <h1>ÚLTIMAS NOTICIAS</h1>
         </div>
     </div>
-    
-    <div class="important_news">
-        <div class="row">
-            <div class="important_news1 col-lg-12">
-                <div class="tittle col-lg-12 col-sm-12 col-md-12 col-xs-12" id="ultimas_noticias">
-                    <h1>ÚLTIMAS NOTICIAS</h1>
+    <div class="row">
+        <div class="col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1" >
+            <div class="row">
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6">
+                    <div class="cardNoticias" id="normalNews1">
+                        
+                    </div>
                 </div>
-                <div class="row" id='NormalNews'>
-                    
+                <div class="col-xs-12 col-sm-12 col-md-6 col-lg-6" >
+                    <div class="cardNoticias2" id="normalNews2">
+                        
+                    </div>
                 </div>
+            </div>
+            <div class="row">
+                <div class="noticia1 col-xs-12 col-sm-12 col-md-5 col-lg-5">
+                    <div class="noticia2 col-xs-12 col-sm-12 col-md-12 col-lg-12" style="padding-right: 5px !important;">
+                        <div class="cardNoticias3" id="normalNews3">
+                            
+                        </div>
+                    </div>
+                </div>
+                <div class="noticia2 col-xs-12 col-sm-12 col-md-7 col-lg-7" style=" height: auto;">
+                    <div class="bannerVertical col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: black; height: 250px;"></div>
+                    <div class="bannerVertical2 col-xs-12 col-sm-12 col-md-12 col-lg-12" style="background-color: black; height: 250px; margin-top: 5px;"></div>
+                </div>
+            </div>
+        </div>
+    </div>
+    </div>
 
-                <div class="row" id='NormalNews2'>
-                    
-                </div>
+    <div class="row">
+
+    	<div class="masNoticias col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1" id="normalNewsRest">
+    	</div>
+    </div>
+    <row>
+        <div class="col-xs-12 col-sm-12 col-md-10 offset-md-1 col-lg-10 offset-lg-1">
+            <div class="paginacion">
                 
-            </div>
-        </div>
-    </div>
+                <button class="btn" id="masNoticias"><i class="material-icons">
+                    add
+                </i>MÁS NOTICIAS</button>
 
+            </div>
+
+        </div>
+    </row>
 </section>
 <footer>
-    <nav class="footer col-xs-12 col-sm-12 col-md-12 col-lg-12">
-        <div class="footer_container container-fluid text-center">
-            <div class="social_footer col-xs-12 col-sm-12 col-md-12  col-lg-12">
-                <a href="#" title="Visitanos en nuestras redes"><div class="social_icon" id="facebook_footer"></div></a>
-                <a href="#" title="Visitanos en nuestras redes"><div class="social_icon" id="twitter_footer"></div></a>
-            </div>
-            <small>©2019 Agencia Digital.Todos los derechos reservados.</small>
+    <nav class="footer container-fluid" style="background-color: lightgray; height: 50px;">
+        <div class="navfooter">
+            <small>©2019 Gestión Digital.Todos los derechos reservados.</small>
         </div>
     </nav>
 </footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
+<script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
 <script src="/JS/Home.js"></script>
 <script src="/JS/Weather.js"></script>
 </body>

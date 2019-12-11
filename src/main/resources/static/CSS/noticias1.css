@@ -1,0 +1,209 @@
+.bannerVertical3 {
+    background-image: url("img/banner4.png") ;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.bannerVertical4 {
+    background-image: url("img/banner5.png") ;
+    background-position: top;
+    background-size: contain;
+    background-repeat: no-repeat;
+}
+
+.noticiasContainer h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 1.5rem;
+    font-weight: bold;
+    text-align: center;
+}
+
+/*-----------------------------------------------*/
+
+.card {
+    height: 400px;
+    background-color: lightgray;
+    box-sizing: border-box;
+    border-bottom: 2px solid red;
+    margin-bottom: 20px;
+}
+
+.cardImg {
+    height: 220px;
+    display: flex;
+    align-items: flex-end;
+    background-color: crimson;
+}
+
+.cardSub {
+    margin: 0;
+    height: 30px;
+    width: 100%;
+    background-color: black;
+    padding-left: 5px;
+    padding-right: 5px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: flex-end;
+
+}
+.cardSub h5 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    color: white;
+}
+
+.cardText {
+    padding: 15px;
+    height: 220px;
+    font-family: 'Lato', sans-serif;
+    font-size: 0.9rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    line-height: 17px;
+}
+
+.cardText h1 {
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-size: 0.9rem;
+    font-weight: bold;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+}
+
+/*-----------------------------------------------*/
+.subText {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    border-bottom: 2px solid red;
+
+}
+
+.subText h1 {
+    font-size: 1rem;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+    margin-bottom: 2px;
+    text-transform: uppercase;
+    color: red;
+}
+
+
+.noticiasText h5 {
+    text-transform: uppercase;
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+}
+
+.noticiasText h1 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 2.4rem;
+    font-family: 'Fira Sans Condensed', sans-serif;
+    font-weight: bold;
+}
+
+.noticiasText h2 {
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    font-size: 1.2rem;
+    font-family: 'Lato', sans-serif;
+    margin-bottom: 20px;
+}
+
+.textNoticias p {
+    font-family: 'Lato', sans-serif;
+    font-size: 1rem;
+    word-break: break-word;
+    overflow-wrap: break-word;
+    hyphens: auto;
+    text-align: justify;
+    line-height: 25px;
+    padding: 20px;
+}
+
+
+
+/*-----------------------------------------------*/
+.gallery-buttons {
+    height: 550px;
+    width: 100px;
+    margin: 0;
+    padding: 0;
+    background-color: transparent;
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.gallery-buttons:hover {
+    background-color: rgba(192,192,192,0.2);
+    text-decoration: none;
+    border: none;
+    outline: none;
+    color: white;
+}
+
+.container-buttons {
+    width: 100%;
+    height: auto;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
+
+/*-----------------------------------------------*/
+.social_facebook {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("img/social_facebook_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social_twitter {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("img/social_twitter_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.social_whatsapp {
+    width: 40px;
+    height: 40px;
+    text-decoration: none;
+    border: none;
+    background-color: transparent;
+    padding: 0;
+    margin-top: 5px;
+    background-image: url("img/social_whatsapp_m.png");
+    background-size: cover;
+    background-position: center;
+}
+
+.socialButtons {
+    border-left: 3px solid red;
+    padding-left: 15px;
+    margin-top: 10px;
+}
